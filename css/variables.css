@@ -1,0 +1,120 @@
+/* ============================================================
+   VARIABLES.CSS — Design tokens, colores y modo claro/oscuro
+   ============================================================ */
+
+:root {
+  /* --- Paleta Softwaves --- */
+  --purple:        #7B35B2;
+  --purple-light:  #9B55D2;
+  --purple-dark:   #5A1F8A;
+  --gold:          #C4B430;
+  --gold-light:    #D4C448;
+  --gold-dark:     #A09420;
+
+  /* --- Gradiente principal --- */
+  --gradient:          linear-gradient(135deg, #7B35B2 0%, #A0706A 50%, #C4B430 100%);
+  --gradient-short:    linear-gradient(135deg, #7B35B2, #C4B430);
+  --gradient-text:     linear-gradient(135deg, #9B55D2, #D4C448);
+  --gradient-border:   linear-gradient(135deg, #7B35B2, #C4B430);
+
+  /* --- Tipografía --- */
+  --font-main: 'Poppins', sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-6xl:  3.75rem;
+
+  /* --- Espaciado --- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* --- Bordes --- */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-full: 9999px;
+
+  /* --- Transiciones --- */
+  --transition-fast:   150ms ease;
+  --transition-base:   300ms ease;
+  --transition-slow:   500ms ease;
+
+  /* --- Sombras base --- */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
+  --shadow-lg:  0 10px 40px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-glow: 0 0 32px rgba(123, 53, 178, 0.3);
+}
+
+/* ===================== MODO CLARO (default) ===================== */
+[data-theme="light"] {
+  --bg-primary:    #F7F5FF;
+  --bg-secondary:  #EEEAF8;
+  --bg-card:       #FFFFFF;
+  --bg-card-hover: #F3F0FF;
+  --bg-navbar:     rgba(247, 245, 255, 0.85);
+
+  --text-primary:   #1A1028;
+  --text-secondary: #5A4E72;
+  --text-muted:     #9088A8;
+
+  --border-color:  #DED9EE;
+  --border-hover:  #9B55D2;
+
+  --icon-color:    #7B35B2;
+  --tag-bg:        rgba(123, 53, 178, 0.08);
+  --tag-color:     #7B35B2;
+
+  --shadow-card:   0 4px 24px rgba(123, 53, 178, 0.10);
+  --shadow-navbar: 0 2px 20px rgba(123, 53, 178, 0.10);
+  --overlay-bg:    rgba(247, 245, 255, 0.96);
+
+  --timeline-line: linear-gradient(180deg, #7B35B2, #C4B430);
+  --section-alt:   #EEEAF8;
+}
+
+/* ===================== MODO OSCURO ===================== */
+[data-theme="dark"] {
+  --bg-primary:    #0C0A14;
+  --bg-secondary:  #120E1E;
+  --bg-card:       #1A1628;
+  --bg-card-hover: #221C34;
+  --bg-navbar:     rgba(12, 10, 20, 0.90);
+
+  --text-primary:   #F0EEFF;
+  --text-secondary: #A89EC8;
+  --text-muted:     #6A6088;
+
+  --border-color:  #2A2240;
+  --border-hover:  #9B55D2;
+
+  --icon-color:    #9B55D2;
+  --tag-bg:        rgba(155, 85, 210, 0.15);
+  --tag-color:     #C090F0;
+
+  --shadow-card:   0 4px 24px rgba(0, 0, 0, 0.40);
+  --shadow-navbar: 0 2px 20px rgba(0, 0, 0, 0.40);
+  --overlay-bg:    rgba(12, 10, 20, 0.96);
+
+  --timeline-line: linear-gradient(180deg, #9B55D2, #D4C448);
+  --section-alt:   #120E1E;
+}

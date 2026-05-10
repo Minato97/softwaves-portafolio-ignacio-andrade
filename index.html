@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio profesional de Ignacio Andrade Salazar — Ingeniero en Electrónica y Computación, Desarrollador Full Stack y Maestrante en Ingeniería de Software." />
+  <meta name="author" content="Ignacio Andrade Salazar" />
+  <title>Ignacio Andrade Salazar — Portafolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons (Phosphor) -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <!-- CSS — Variables primero, luego base, luego secciones -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/experience.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/education.css" />
+  <link rel="stylesheet" href="css/softwaves.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- Theme: aplicar antes de renderizar para evitar flash -->
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="container navbar-inner">
+
+    <a href="#hero" class="navbar-brand" aria-label="Inicio">
+      <div class="brand-initials" aria-hidden="true">IA</div>
+      <span class="brand-name">Ignacio Andrade</span>
+    </a>
+
+    <ul class="navbar-links" role="list">
+      <li><a href="#about"      class="active">Sobre mí</a></li>
+      <li><a href="#experience">Experiencia</a></li>
+      <li><a href="#skills">    Habilidades</a></li>
+      <li><a href="#projects">  Proyectos</a></li>
+      <li><a href="#education"> Formación</a></li>
+      <li><a href="#softwaves"> SoftWaves</a></li>
+      <li><a href="#contact">   Contacto</a></li>
+    </ul>
+
+    <div class="navbar-controls">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <i class="ph ph-moon icon-moon"  aria-hidden="true"></i>
+        <i class="ph ph-sun  icon-sun"   aria-hidden="true"></i>
+      </button>
+
+      <button id="hamburger" class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Menú móvil (overlay) -->
+<div id="mobile-menu" class="mobile-menu" aria-label="Menú móvil">
+  <a href="#about"      data-section="about">      Sobre mí</a>
+  <a href="#experience" data-section="experience"> Experiencia</a>
+  <a href="#skills"     data-section="skills">     Habilidades</a>
+  <a href="#projects"   data-section="projects">   Proyectos</a>
+  <a href="#education"  data-section="education">  Formación</a>
+  <a href="#softwaves"  data-section="softwaves">  SoftWaves</a>
+  <a href="#contact"    data-section="contact">    Contacto</a>
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+
+  <div class="container hero-inner">
+
+    <!-- Contenido texto -->
+    <div class="hero-content">
+      <p class="hero-greeting">¡Hola! Soy</p>
+
+      <h1 class="hero-name">
+        <span class="first-name">Ignacio</span>
+        <span class="last-name">Andrade Salazar</span>
+      </h1>
+
+      <div class="hero-typewriter" aria-live="polite">
+        <span class="typewriter-prefix">Soy&nbsp;</span>
+        <span id="typewriter-text"></span>
+        <span class="typewriter-cursor" aria-hidden="true"></span>
+      </div>
+
+      <p class="hero-description">
+        Apasionado por la tecnología y el emprendimiento, combino tres formaciones académicas
+        con más de 5 años de experiencia construyendo soluciones web que hacen la diferencia.
+        Basado en <strong>Ameca, Jalisco</strong>.
+      </p>
+
+      <div class="hero-chips">
+        <span class="hero-chip">
+          <i class="ph ph-map-pin"></i> Ameca, Jalisco
+        </span>
+        <span class="hero-chip">
+          <i class="ph ph-briefcase"></i> 5+ años de experiencia
+        </span>
+        <span class="hero-chip">
+          <i class="ph ph-trophy"></i> 3 Hackatones Swift
+        </span>
+        <span class="hero-chip">
+          <i class="ph ph-graduation-cap"></i> Maestría en curso
+        </span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="ph ph-folder-open"></i> Ver proyectos
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="ph ph-envelope"></i> Contáctame
+        </a>
+      </div>
+
+      <div class="hero-social">
+        <span class="social-label">Redes</span>
+        <div class="social-divider" aria-hidden="true"></div>
+        <a href="https://github.com/Minato97" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="ph ph-github-logo"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="ph ph-linkedin-logo"></i>
+        </a>
+        <a href="https://www.instagram.com/nacho_as97/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="ph ph-instagram-logo"></i>
+        </a>
+        <a href="mailto:andrade.ignacio97@gmail.com" aria-label="Email">
+          <i class="ph ph-envelope-simple"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Visual / Avatar -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-avatar-wrap">
+        <div class="hero-avatar">
+          <!-- Reemplaza esta imagen con tu foto: assets/img/profile.jpg -->
+          <img src="assets/img/profile.jpg"
+               alt="Foto de Ignacio Andrade Salazar"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-placeholder" style="display:none;">IA</div>
+        </div>
+
+        <!-- Badges flotantes -->
+        <div class="hero-badge hero-badge-exp">
+          <span class="badge-icon">💻</span>
+          <div>
+            <div style="font-size:0.7rem;color:var(--text-muted);">Experiencia</div>
+            <div>5+ años Dev</div>
+          </div>
+        </div>
+
+        <div class="hero-badge hero-badge-hack">
+          <span class="badge-icon">🏆</span>
+          <div>
+            <div style="font-size:0.7rem;color:var(--text-muted);">Hackatones</div>
+            <div>3 × Swift</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /hero-inner -->
+
+  <!-- Wave inferior -->
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--bg-primary)" />
+    </svg>
+  </div>
+
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-mouse"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ABOUT — Sobre mí
+     ============================================================ -->
+<section id="about">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Conóceme</span>
+      <h2 class="section-title">Sobre <span>mí</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="about-grid">
+
+      <!-- Texto -->
+      <div class="about-content fade-left">
+        <p class="about-tagline">
+          Tres títulos, una pasión: crear tecnología que resuelve problemas reales.
+        </p>
+
+        <p class="about-text">
+          Soy <strong>Licenciado en Administración</strong> con especialidad en emprendimiento,
+          <strong>Ingeniero en Electrónica y Computación</strong> y actualmente curso el segundo
+          semestre de la <strong>Maestría en Ingeniería de Software</strong> en CUValles, Universidad
+          de Guadalajara. Tengo más de 5 años desarrollando herramientas web que impactan a
+          universidades, empresas y gobiernos.
+        </p>
+
+        <p class="about-text">
+          He participado en <strong>tres hackatones nacionales de Swift</strong> (Apple Developer),
+          lo que me ha forjado para trabajar bajo presión, en equipo y con visión de producto.
+          Manejo lenguajes como PHP, Python, C/C++, Go, Java, Swift y JavaScript, además de frameworks
+          como Laravel, Vue, Quasar y SwiftUI.
+        </p>
+
+        <blockquote class="about-philosophy">
+          <p>
+            Soy una persona que busca siempre mejorar su versión de sí misma. Confío en que cada
+            persona tiene una historia escrita y que cada paso, bueno o malo, es necesario para
+            alcanzar la meta.
+          </p>
+        </blockquote>
+
+        <!-- Estadísticas -->
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-count="5" data-suffix="+">0+</div>
+            <div class="stat-label">Años de<br>experiencia</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="10" data-suffix="+">0+</div>
+            <div class="stat-label">Proyectos<br>desarrollados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label">Hackatones<br>Swift</div>
+          </div>
+        </div>
+
+        <!-- Info de contacto rápido -->
+        <div class="about-info-list">
+          <div class="info-item">
+            <div class="info-icon"><i class="ph ph-map-pin"></i></div>
+            <span>Ameca, Jalisco — 2 h de Guadalajara</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="ph ph-envelope-simple"></i></div>
+            <a href="mailto:andrade.ignacio97@gmail.com">andrade.ignacio97@gmail.com</a>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="ph ph-github-logo"></i></div>
+            <a href="https://github.com/Minato97" target="_blank" rel="noopener">github.com/Minato97</a>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="ph ph-linkedin-logo"></i></div>
+            <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" rel="noopener">LinkedIn — Ignacio Andrade Salazar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual: tarjetas de roles -->
+      <div class="about-visual fade-right">
+        <div class="about-roles-grid">
+
+          <div class="role-card featured">
+            <div class="role-icon">🎓</div>
+            <div>
+              <div class="role-title">Triple formación académica</div>
+              <div class="role-desc">
+                Administración + Electrónica y Computación + Maestría en Ing. de Software.
+                Una visión técnica y de negocios en una sola persona.
+              </div>
+            </div>
+          </div>
+
+          <div class="role-card">
+            <div class="role-icon">⚙️</div>
+            <div class="role-title">Full Stack</div>
+            <div class="role-desc">Backend sólido en Laravel y frontends modernos con Vue/Quasar.</div>
+          </div>
+
+          <div class="role-card">
+            <div class="role-icon">📱</div>
+            <div class="role-title">Mobile</div>
+            <div class="role-desc">Apps PWA con Quasar/Cordova y apps nativas en SwiftUI.</div>
+          </div>
+
+          <div class="role-card">
+            <div class="role-icon">🏢</div>
+            <div class="role-title">Gestión</div>
+            <div class="role-desc">Liderazgo de equipos, modelos de negocio y planeación estratégica.</div>
+          </div>
+
+          <div class="role-card">
+            <div class="role-icon">🔬</div>
+            <div class="role-title">Investigación</div>
+            <div class="role-desc">Tesis activa: sistema medioambiental con agente inteligente.</div>
+          </div>
+
+          <div class="hackathon-badge">
+            <div class="hack-icon">🏆</div>
+            <div class="hack-info">
+              <div class="hack-title">3 Hackatones Nacionales Swift</div>
+              <div class="hack-sub">Apple Developer Program — México</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /about-grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EXPERIENCE — Experiencia laboral
+     ============================================================ -->
+<section id="experience" class="alt-bg">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Trayectoria</span>
+      <h2 class="section-title">Experiencia <span>profesional</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Ítem 1 — Maestría / Tesis (actual) -->
+      <div class="timeline-item right fade-up">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="timeline-card current">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            2025 — Presente
+          </div>
+          <div class="timeline-role">
+            Maestrante & Desarrollador de Tesis
+            <span class="current-badge">Activo</span>
+          </div>
+          <div class="timeline-company">
+            <i class="ph ph-buildings timeline-company-icon"></i>
+            CUValles — Universidad de Guadalajara
+          </div>
+          <p class="timeline-desc">
+            Desarrollo de tesis titulada <em>"Sistema para el Monitoreo Medioambiental y Edafológico
+            con integración de un agente inteligente para la interpretación de datos"</em>.
+            Investigación activa, diseño de arquitectura IoT y modelos de IA para análisis de suelos.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">IoT</span>
+            <span class="tag">Python</span>
+            <span class="tag">IA / ML</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Investigación</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ítem 2 — Becario Full Stack Investigación -->
+      <div class="timeline-item left fade-up delay-1">
+        <div class="timeline-card">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            2 años
+          </div>
+          <div class="timeline-role">Becario Desarrollador Full Stack</div>
+          <div class="timeline-company" style="justify-content:flex-end;">
+            <i class="ph ph-flask timeline-company-icon"></i>
+            Programa de Apoyo al Investigador — CUValles
+          </div>
+          <p class="timeline-desc">
+            Desarrollo de sistemas completos (frontend + backend) para proyectos de investigación
+            del centro. Integración de APIs, bases de datos relacionales y autenticación con JWT/Sanctum.
+          </p>
+          <div class="timeline-tags" style="justify-content:flex-end;">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">JWT</span>
+            <span class="tag">REST API</span>
+          </div>
+        </div>
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+      </div>
+
+      <!-- Ítem 3 — Becario Junior CTA -->
+      <div class="timeline-item right fade-up delay-2">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            3 años
+          </div>
+          <div class="timeline-role">Becario Desarrollador Junior</div>
+          <div class="timeline-company">
+            <i class="ph ph-monitor timeline-company-icon"></i>
+            Centro de Tecnologías para el Aprendizaje — CUValles
+          </div>
+          <p class="timeline-desc">
+            Desarrollo y mantenimiento de herramientas web institucionales para la Universidad
+            de Guadalajara. Participación en proyectos como el Help Desk de soporte técnico,
+            sistema de prácticas profesionales y sistema de eventos del campus.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Laravel 8</span>
+            <span class="tag">Vue</span>
+            <span class="tag">PHP</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ítem 4 — CReCE Incubadora -->
+      <div class="timeline-item left fade-up delay-3">
+        <div class="timeline-card">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            1 año
+          </div>
+          <div class="timeline-role">Encargado de Incubación de Negocios</div>
+          <div class="timeline-company" style="justify-content:flex-end;">
+            <i class="ph ph-rocket-launch timeline-company-icon"></i>
+            CReCE — Centro Regional para la Calidad Empresarial
+          </div>
+          <p class="timeline-desc">
+            Gestión del departamento de incubación de negocios en CUValles. Asesoría a emprendedores,
+            evaluación de modelos de negocio y coordinación de programas de apoyo empresarial.
+          </p>
+          <div class="timeline-tags" style="justify-content:flex-end;">
+            <span class="tag">Emprendimiento</span>
+            <span class="tag">Modelos de negocio</span>
+            <span class="tag">Liderazgo</span>
+            <span class="tag">Gestión</span>
+          </div>
+        </div>
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+      </div>
+
+      <!-- Ítem 5 — Arca Continental -->
+      <div class="timeline-item right fade-up delay-4">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            3 años
+          </div>
+          <div class="timeline-role">Checador / Almacenista</div>
+          <div class="timeline-company">
+            <i class="ph ph-factory timeline-company-icon"></i>
+            Arca Continental CEDIS Ameca
+          </div>
+          <p class="timeline-desc">
+            Control y registro de inventarios, logística de distribución y gestión de almacén
+            en el centro de distribución de Arca Continental. Desarrollo de habilidades operativas
+            y disciplina laboral.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Logística</span>
+            <span class="tag">Inventarios</span>
+            <span class="tag">Control de almacén</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SKILLS — Habilidades
+     ============================================================ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Conocimientos</span>
+      <h2 class="section-title">Mis <span>habilidades</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="skills-layout">
+
+      <!-- Lenguajes de programación -->
+      <div class="skill-category fade-up">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">💻</div>
+          <div>
+            <div class="skill-category-title">Lenguajes de programación</div>
+            <div class="skill-category-sub">Siempre abierto a aprender nuevos</div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag"><span class="tag-dot"></span>PHP</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Python</span>
+          <span class="skill-tag"><span class="tag-dot"></span>JavaScript</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Swift</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Java</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Go</span>
+          <span class="skill-tag"><span class="tag-dot"></span>C</span>
+          <span class="skill-tag"><span class="tag-dot"></span>C++</span>
+        </div>
+      </div>
+
+      <!-- Frameworks y librerías -->
+      <div class="skill-category fade-up delay-1">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">🧩</div>
+          <div>
+            <div class="skill-category-title">Frameworks & Librerías</div>
+            <div class="skill-category-sub">Web, móvil y backend</div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag"><span class="tag-dot"></span>Laravel</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Vue.js</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Quasar</span>
+          <span class="skill-tag"><span class="tag-dot"></span>SwiftUI</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Cordova</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Laravel Sanctum</span>
+          <span class="skill-tag"><span class="tag-dot"></span>JWT</span>
+        </div>
+      </div>
+
+      <!-- Herramientas y DevOps -->
+      <div class="skill-category fade-up delay-2">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">🛠️</div>
+          <div>
+            <div class="skill-category-title">Herramientas & DevOps</div>
+            <div class="skill-category-sub">Desarrollo y despliegue</div>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Git & GitHub</span>
+              <span class="skill-bar-level">Avanzado</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Docker</span>
+              <span class="skill-bar-level">Intermedio-Avanzado</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Linux (servidor)</span>
+              <span class="skill-bar-level">Intermedio</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="75%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">MySQL</span>
+              <span class="skill-bar-level">Avanzado</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Postman / Bruno</span>
+              <span class="skill-bar-level">Avanzado</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="88%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habilidades de negocio y liderazgo -->
+      <div class="skill-category fade-up delay-3">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">📊</div>
+          <div>
+            <div class="skill-category-title">Administración & Liderazgo</div>
+            <div class="skill-category-sub">Formación en gestión empresarial</div>
+          </div>
+        </div>
+        <div class="business-skills">
+          <div class="business-skill-item">
+            <div class="business-icon">💰</div>
+            <div class="business-name">Contabilidad básica</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">📋</div>
+            <div class="business-name">Planeación estratégica</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">🗺️</div>
+            <div class="business-name">Modelo de negocios</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">📈</div>
+            <div class="business-name">Finanzas</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">👥</div>
+            <div class="business-name">Liderazgo de equipo</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">🚀</div>
+            <div class="business-name">Emprendimiento</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idiomas — ancho completo -->
+      <div class="skill-category full-width fade-up">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">🌐</div>
+          <div>
+            <div class="skill-category-title">Idiomas</div>
+          </div>
+        </div>
+        <div class="languages-list">
+          <div class="language-item">
+            <span class="language-flag">🇲🇽</span>
+            <div class="language-info">
+              <div class="language-name">Español</div>
+              <div class="language-level">Nativo</div>
+            </div>
+            <div class="language-dots">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+            </div>
+          </div>
+          <div class="language-item">
+            <span class="language-flag">🇺🇸</span>
+            <div class="language-info">
+              <div class="language-name">Inglés Técnico</div>
+              <div class="language-level">Lectura y escritura avanzado · Habla básico</div>
+            </div>
+            <div class="language-dots">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /skills-layout -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROJECTS — Proyectos
+     ============================================================ -->
+<section id="projects" class="alt-bg">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Portafolio</span>
+      <h2 class="section-title">Mis <span>proyectos</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="projects-filter fade-up">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="universidad">Universidad</button>
+      <button class="filter-btn" data-filter="externo">Externos</button>
+      <button class="filter-btn" data-filter="herramienta">Herramientas</button>
+      <button class="filter-btn" data-filter="investigacion">Investigación</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="projects-grid">
+
+      <!-- Proyecto 1: SISPA Móvil -->
+      <article class="project-card" data-category="universidad">
+        <div class="project-card-banner bg-purple">
+          <span class="banner-icon">📱</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Universidad · PWA / Móvil</div>
+          <h3 class="project-title">SISPA Móvil</h3>
+          <p class="project-desc">
+            App PWA para que estudiantes de la carrera de Electrónica y Computación en CUValles
+            soliciten documentos y peticiones al coordinador de carrera, con integración al
+            sistema SIIAU de la Red UDG para login.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Quasar</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">Laravel 8</span>
+            <span class="tag">Cordova</span>
+            <span class="tag">SIIAU API</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">PWA</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 2: Help Desk -->
+      <article class="project-card" data-category="universidad">
+        <div class="project-card-banner bg-indigo">
+          <span class="banner-icon">🖥️</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Universidad · Web App</div>
+          <h3 class="project-title">Help Desk Soporte Técnico</h3>
+          <p class="project-desc">
+            Sistema de gestión de reportes de fallas en dispositivos y redes para el área de
+            soporte técnico de CUValles. Protección de rutas con JWT y embebido de Vue 3 en Laravel.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel 8</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">JWT</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">Web</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 3: SmartAccess -->
+      <article class="project-card" data-category="externo">
+        <div class="project-card-banner bg-teal">
+          <span class="banner-icon">🔑</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Externo · IoT</div>
+          <h3 class="project-title">SmartAccess — CETIS 63</h3>
+          <p class="project-desc">
+            Sistema de registro de entradas y salidas para el CETIS 63 de Ameca mediante tarjetas
+            RFID. Notificaciones en tiempo real vía <strong>Telegram</strong> para que padres de familia
+            reciban alertas al momento.
+          </p>
+          <div class="project-stack">
+            <span class="tag">RFID</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Telegram Bot API</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">IoT</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 4: Agenda Dental -->
+      <article class="project-card" data-category="externo">
+        <div class="project-card-banner bg-rose">
+          <span class="banner-icon">🦷</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Externo · Web App</div>
+          <h3 class="project-title">Sistema de Agenda Dental</h3>
+          <p class="project-desc">
+            Sistema de gestión de citas para consultorio dental. Control de pacientes, calendario
+            de citas, recordatorios y historial de atención. Diseñado para un consultorio privado.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">REST API</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">SaaS</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 5: Reportes Gobierno Ameca -->
+      <article class="project-card" data-category="externo">
+        <div class="project-card-banner bg-amber">
+          <span class="banner-icon">🏛️</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Gobierno · Web App</div>
+          <h3 class="project-title">Sistema de Reportes — Servicios Públicos</h3>
+          <p class="project-desc">
+            Sistema de reportes para el área de Servicios Públicos del <strong>Gobierno de Ameca</strong>.
+            Permite registrar, dar seguimiento y resolver incidencias ciudadanas de manera digital.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Bootstrap</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">Gobierno</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 6: Generador Laravel (Python Scripts) -->
+      <article class="project-card" data-category="herramienta">
+        <div class="project-card-banner bg-gold">
+          <span class="banner-icon">⚡</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Herramienta · Open Source</div>
+          <h3 class="project-title">Generador de Backend Laravel</h3>
+          <p class="project-desc">
+            Script Python que genera un backend Laravel completo en Docker a partir de un modelo
+            relacional <code>.mwb</code>. Crea migraciones, seeders, modelos, controladores, servicios
+            y rutas protegidas con <strong>Laravel Sanctum</strong>, además de un Bash para despliegue
+            automático.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Python</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Laravel Sanctum</span>
+            <span class="tag">Bash</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">DevTool</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 7: Gestión Proyectos Investigación (en curso) -->
+      <article class="project-card" data-category="universidad investigacion">
+        <div class="project-card-banner bg-gradient">
+          <span class="banner-icon">📂</span>
+          <span class="project-status status-progress">En desarrollo</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Universidad · Web App</div>
+          <h3 class="project-title">Sistema de Gestión de Proyectos de Investigación</h3>
+          <p class="project-desc">
+            Plataforma web para la gestión, seguimiento y evaluación de proyectos de investigación
+            en CUValles. Actualmente en desarrollo activo.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">En Desarrollo</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo en progreso">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">🚧 WIP</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 8: Reporte Vertederos -->
+      <article class="project-card" data-category="universidad externo">
+        <div class="project-card-banner bg-teal">
+          <span class="banner-icon">♻️</span>
+          <span class="project-status status-progress">En desarrollo</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Universidad / Gobierno · Web App</div>
+          <h3 class="project-title">Reporte de Vertederos Clandestinos</h3>
+          <p class="project-desc">
+            Sistema ciudadano para reportar vertederos de residuos clandestinos en la Región Valles.
+            Georeferenciación de reportes y seguimiento por autoridades.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue</span>
+            <span class="tag">Geolocalización</span>
+            <span class="tag">En Desarrollo</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo en progreso">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">🚧 WIP</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 9: Tesis — Sistema Medioambiental -->
+      <article class="project-card" data-category="investigacion">
+        <div class="project-card-banner bg-gradient">
+          <span class="banner-icon">🌱</span>
+          <span class="project-status status-thesis">Tesis</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Investigación · IoT + IA</div>
+          <h3 class="project-title">Sistema de Monitoreo Medioambiental y Edafológico</h3>
+          <p class="project-desc">
+            Tesis de maestría: sistema para el monitoreo de suelos y variables medioambientales
+            con integración de un <strong>agente inteligente</strong> para la interpretación y
+            análisis de datos en tiempo real.
+          </p>
+          <div class="project-stack">
+            <span class="tag">IoT</span>
+            <span class="tag">Python</span>
+            <span class="tag">IA / ML</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Sensores</span>
+            <span class="tag">Vue 3</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo en progreso">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">Tesis 2027</span>
+        </div>
+      </article>
+
+    </div><!-- /projects-grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EDUCATION — Formación académica
+     ============================================================ -->
+<section id="education">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Formación</span>
+      <h2 class="section-title">Mi <span>educación</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="edu-grid">
+
+      <!-- Técnico en Contabilidad -->
+      <div class="edu-card">
+        <div class="edu-icon-wrap">🏫</div>
+        <div class="edu-info">
+          <div class="edu-period">
+            2013 — 2015
+            <span class="edu-badge graduated">Egresado</span>
+          </div>
+          <div class="edu-degree">Técnico en Contabilidad</div>
+          <div class="edu-specialty">Especialidad en Contabilidad General</div>
+          <div class="edu-institution">
+            <i class="ph ph-building"></i>
+            CETIS 63 — Ameca, Jalisco
+          </div>
+        </div>
+      </div>
+
+      <!-- Licenciatura Administración -->
+      <div class="edu-card">
+        <div class="edu-icon-wrap">📊</div>
+        <div class="edu-info">
+          <div class="edu-period">
+            2015 — 2019
+            <span class="edu-badge graduated">Egresado</span>
+          </div>
+          <div class="edu-degree">Licenciado en Administración</div>
+          <div class="edu-specialty">Especialidad en Emprendimiento</div>
+          <div class="edu-institution">
+            <i class="ph ph-buildings"></i>
+            CUValles — Universidad de Guadalajara
+          </div>
+        </div>
+      </div>
+
+      <!-- Ingeniería -->
+      <div class="edu-card">
+        <div class="edu-icon-wrap">⚡</div>
+        <div class="edu-info">
+          <div class="edu-period">
+            2019 — 2025
+            <span class="edu-badge graduated">Egresado</span>
+          </div>
+          <div class="edu-degree">Ingeniero en Electrónica y Computación</div>
+          <div class="edu-specialty">Énfasis en Computación y Sistemas Embebidos</div>
+          <div class="edu-institution">
+            <i class="ph ph-buildings"></i>
+            CUValles — Universidad de Guadalajara
+          </div>
+        </div>
+      </div>
+
+      <!-- Maestría -->
+      <div class="edu-card current">
+        <div class="edu-icon-wrap">🎓</div>
+        <div class="edu-info">
+          <div class="edu-period">
+            2025 — 2027
+            <span class="edu-badge in-progress">En curso</span>
+          </div>
+          <div class="edu-degree">Maestría en Ingeniería de Software</div>
+          <div class="edu-specialty">2do semestre · Tesis en desarrollo</div>
+          <div class="edu-institution">
+            <i class="ph ph-buildings"></i>
+            CUValles — Universidad de Guadalajara
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /edu-grid -->
+
+    <!-- Hackatones -->
+    <div class="hackathons-section fade-up">
+      <h3 class="hackathons-title">🏆 Participaciones en <span style="background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Hackatones Swift</span></h3>
+      <div class="hackathons-grid">
+        <div class="hackathon-card">
+          <div class="hack-number">01</div>
+          <div class="hack-title-card">Hackatón Nacional Swift</div>
+          <div class="hack-subtitle">Apple Developer Program · México</div>
+        </div>
+        <div class="hackathon-card">
+          <div class="hack-number">02</div>
+          <div class="hack-title-card">Hackatón Nacional Swift</div>
+          <div class="hack-subtitle">Apple Developer Program · México</div>
+        </div>
+        <div class="hackathon-card">
+          <div class="hack-number">03</div>
+          <div class="hack-title-card">Hackatón Nacional Swift</div>
+          <div class="hack-subtitle">Apple Developer Program · México</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SOFTWAVES — Mi empresa
+     ============================================================ -->
+<section id="softwaves" class="alt-bg">
+  <div class="container">
+    <div class="sw-layout">
+
+      <!-- Contenido -->
+      <div class="sw-content fade-left">
+        <div class="sw-eyebrow">
+          <i class="ph ph-rocket-launch"></i>
+          Próximo proyecto
+        </div>
+
+        <h2 class="sw-title">
+          Presentando<br>
+          <span class="sw-brand">SoftWaves</span>
+        </h2>
+
+        <p class="sw-description">
+          <strong>SoftWaves</strong> es mi empresa en formación: un proyecto que nace de la fusión
+          de todos mis conocimientos en tecnología, administración e investigación. La visión es
+          crear soluciones de software de alto impacto para empresas, instituciones educativas y
+          gobiernos, combinando desarrollo ágil con inteligencia artificial.
+        </p>
+
+        <div class="sw-pillars">
+          <div class="sw-pillar">
+            <div class="sw-pillar-icon">🌊</div>
+            <div class="sw-pillar-text">
+              <div class="pillar-title">Desarrollo Web & Móvil</div>
+              <div class="pillar-desc">Soluciones modernas, escalables y bien diseñadas.</div>
+            </div>
+          </div>
+          <div class="sw-pillar">
+            <div class="sw-pillar-icon">🤖</div>
+            <div class="sw-pillar-text">
+              <div class="pillar-title">Inteligencia Artificial</div>
+              <div class="pillar-desc">Integración de agentes y modelos para análisis de datos.</div>
+            </div>
+          </div>
+          <div class="sw-pillar">
+            <div class="sw-pillar-icon">🏢</div>
+            <div class="sw-pillar-text">
+              <div class="pillar-title">Consultoría Tech</div>
+              <div class="pillar-desc">Acompañamiento estratégico en transformación digital.</div>
+            </div>
+          </div>
+          <div class="sw-pillar">
+            <div class="sw-pillar-icon">🔬</div>
+            <div class="sw-pillar-text">
+              <div class="pillar-title">I+D</div>
+              <div class="pillar-desc">Investigación aplicada en IoT y monitoreo ambiental.</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary">
+          <i class="ph ph-handshake"></i> Hablemos de tu proyecto
+        </a>
+      </div>
+
+      <!-- Visual con logo -->
+      <div class="sw-visual fade-right">
+        <div class="sw-card">
+          <div class="sw-logo-wrap">
+            <!-- Logo con colores (modo oscuro) -->
+            <img src="assets/logos/softwaves-color.png"
+                 alt="SoftWaves Logo"
+                 class="sw-logo sw-logo-dark" />
+            <!-- Logo oscuro (modo claro) -->
+            <img src="assets/logos/softwaves-color.png"
+                 alt="SoftWaves Logo"
+                 class="sw-logo sw-logo-light" />
+          </div>
+          <div class="sw-card-title">SoftWaves</div>
+          <div class="sw-card-tagline">"Donde la tecnología cobra vida"</div>
+
+          <div class="sw-stats">
+            <div class="sw-stat">
+              <div class="sw-stat-num">5+</div>
+              <div class="sw-stat-label">Años de experiencia</div>
+            </div>
+            <div class="sw-stat">
+              <div class="sw-stat-num">10+</div>
+              <div class="sw-stat-label">Proyectos</div>
+            </div>
+            <div class="sw-stat">
+              <div class="sw-stat-num">3</div>
+              <div class="sw-stat-label">Formaciones</div>
+            </div>
+          </div>
+
+          <div class="sw-coming-soon">
+            <span class="sw-chip">🚀 Próximamente</span>
+            <span class="sw-chip">💼 Open to work</span>
+            <span class="sw-chip">🌐 softwaves.mx</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT — Contacto
+     ============================================================ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Hablemos</span>
+      <h2 class="section-title">¿Tienes un <span>proyecto</span>?</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Info de contacto -->
+      <div class="contact-info fade-left">
+        <p class="contact-intro">
+          Estoy disponible para proyectos freelance, colaboraciones, investigación o simplemente
+          para platicar de tecnología y emprendimiento. ¡Escríbeme!
+        </p>
+
+        <div class="contact-methods">
+          <a href="mailto:andrade.ignacio97@gmail.com" class="contact-method">
+            <div class="contact-method-icon"><i class="ph ph-envelope-simple"></i></div>
+            <div class="contact-method-info">
+              <div class="contact-method-label">Email</div>
+              <div class="contact-method-value">andrade.ignacio97@gmail.com</div>
+            </div>
+            <i class="ph ph-arrow-right contact-method-arrow"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" class="contact-method">
+            <div class="contact-method-icon"><i class="ph ph-linkedin-logo"></i></div>
+            <div class="contact-method-info">
+              <div class="contact-method-label">LinkedIn</div>
+              <div class="contact-method-value">Ignacio Andrade Salazar</div>
+            </div>
+            <i class="ph ph-arrow-right contact-method-arrow"></i>
+          </a>
+
+          <a href="https://github.com/Minato97" target="_blank" class="contact-method">
+            <div class="contact-method-icon"><i class="ph ph-github-logo"></i></div>
+            <div class="contact-method-info">
+              <div class="contact-method-label">GitHub</div>
+              <div class="contact-method-value">github.com/Minato97</div>
+            </div>
+            <i class="ph ph-arrow-right contact-method-arrow"></i>
+          </a>
+
+          <div class="contact-method" style="cursor:default;">
+            <div class="contact-method-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="contact-method-info">
+              <div class="contact-method-label">Ubicación</div>
+              <div class="contact-method-value">Ameca, Jalisco · México</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="contact-social-title">Sígueme en</p>
+        <div class="contact-social-links">
+          <a href="https://github.com/Minato97" target="_blank" class="contact-social-link" aria-label="GitHub">
+            <i class="ph ph-github-logo"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" class="contact-social-link" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+          </a>
+          <a href="https://www.instagram.com/nacho_as97/" target="_blank" class="contact-social-link" aria-label="Instagram">
+            <i class="ph ph-instagram-logo"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="contact-form-wrap fade-right">
+        <h3 class="form-title">Envíame un mensaje</h3>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Nombre <span>*</span></label>
+              <input type="text" id="name" name="name" class="form-input"
+                     placeholder="Tu nombre" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email <span>*</span></label>
+              <input type="email" id="email" name="email" class="form-input"
+                     placeholder="tu@email.com" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="subject">Asunto <span>*</span></label>
+            <input type="text" id="subject" name="subject" class="form-input"
+                   placeholder="¿De qué quieres hablar?" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Mensaje <span>*</span></label>
+            <textarea id="message" name="message" class="form-textarea"
+                      placeholder="Cuéntame sobre tu proyecto o idea..." required></textarea>
+          </div>
+
+          <div class="form-submit">
+            <p class="form-note">Respondo en menos de 24 horas, generalmente mucho antes 😊</p>
+            <button type="submit" class="btn btn-primary form-submit-btn">
+              <i class="ph ph-paper-plane-tilt"></i>
+              <span>Enviar mensaje</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div><!-- /contact-layout -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <!-- Marca -->
+      <div class="footer-brand">
+        <a href="#hero" class="footer-logo">
+          <div class="footer-logo-badge">IA</div>
+          <span class="footer-logo-name">Ignacio Andrade</span>
+        </a>
+        <p class="footer-tagline">
+          Ingeniero, desarrollador y emprendedor. Construyendo tecnología que hace la diferencia
+          desde Ameca, Jalisco.
+        </p>
+        <div class="footer-social">
+          <a href="https://github.com/Minato97" target="_blank" class="footer-social-link" aria-label="GitHub">
+            <i class="ph ph-github-logo"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" class="footer-social-link" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+          </a>
+          <a href="https://www.instagram.com/nacho_as97/" target="_blank" class="footer-social-link" aria-label="Instagram">
+            <i class="ph ph-instagram-logo"></i>
+          </a>
+          <a href="mailto:andrade.ignacio97@gmail.com" class="footer-social-link" aria-label="Email">
+            <i class="ph ph-envelope-simple"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <div class="footer-col">
+        <div class="footer-col-title">Navegación</div>
+        <ul class="footer-links">
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#experience">Experiencia</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#education">Formación</a></li>
+        </ul>
+      </div>
+
+      <!-- Más -->
+      <div class="footer-col">
+        <div class="footer-col-title">Más</div>
+        <ul class="footer-links">
+          <li><a href="#softwaves">SoftWaves</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li><a href="https://github.com/Minato97" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /footer-inner -->
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © 2025 <span>Ignacio Andrade Salazar</span>. Todos los derechos reservados.
+      </p>
+      <p class="footer-made-with">
+        Hecho con <span class="heart">♥</span> y mucho café en Ameca, Jalisco
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Botón volver arriba -->
+<button id="back-to-top" aria-label="Volver al inicio">
+  <i class="ph ph-arrow-up"></i>
+</button>
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="js/navbar.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/projects.js"></script>
+
+</body>
+</html>
