@@ -1,1312 +1,1403 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SoftWaves — Soluciones Digitales Inteligentes</title>
-  <link rel="icon" type="image/png" href="assets/logo-color-icon.png" />
-  <link rel="apple-touch-icon" href="assets/logo-color-icon.png" />
+  <meta name="description" content="Portafolio profesional de Ignacio Andrade Salazar — Ingeniero en Electrónica y Computación, Desarrollador Full Stack y Maestrante en Ingeniería de Software." />
+  <meta name="author" content="Ignacio Andrade Salazar" />
+  <title>Ignacio Andrade Salazar — Portafolio</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <style>
-    /* ═══════════════════════════════════════
-       VARIABLES — DARK (default)
-    ═══════════════════════════════════════ */
-    :root {
-      --purple:       #7f00b2;
-      --purple-dark:  #530084;
-      --purple-mid:   #9120bd;
-      --purple-light: #bc4ed8;
-      --blue:         #014ba0;
-      --blue-mid:     #1466c3;
-      --blue-light:   #5275c8;
-      --yellow:       #e8e800;
-      --yellow-bright:#ffff00;
-      --yellow-soft:  #ffff6a;
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
 
-      --bg:           #06001a;
-      --bg-card:      #0d0028;
-      --bg-card2:     #160038;
-      --nav-bg:       rgba(6,0,26,0.90);
-      --text:         #F0EFFF;
-      --text-muted:   #9B8AB8;
-      --border:       rgba(127,0,178,0.30);
-      --border-hover: rgba(145,32,189,0.70);
-      --shadow:       rgba(0,0,0,0.6);
-      --grid-line:    rgba(255,255,255,0.04);
-      --hero-glow:    rgba(127,0,178,0.28);
-      --hero-glow2:   rgba(232,232,0,0.07);
-      --scroll-track: #06001a;
+  <!-- Icons (Phosphor) -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
-      --grad:         linear-gradient(135deg, #014ba0 0%, #7f00b2 55%, #cccc00 100%);
-      --grad-text:    linear-gradient(90deg, #5275c8 0%, #bc4ed8 50%, #e8e800 100%);
-      --radius:       16px;
-      --transition:   0.35s cubic-bezier(0.4,0,0.2,1);
-    }
+  <!-- CSS — Variables primero, luego base, luego animaciones, luego secciones -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/experience.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/education.css" />
+  <link rel="stylesheet" href="css/softwaves.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
 
-    /* ═══════════════════════════════════════
-       VARIABLES — LIGHT
-    ═══════════════════════════════════════ */
-    [data-theme="light"] {
-      --bg:           #F0EEFF;
-      --bg-card:      #FFFFFF;
-      --bg-card2:     #E8DEFF;
-      --nav-bg:       rgba(240,238,255,0.92);
-      --text:         #0a001a;
-      --text-muted:   #4A3570;
-      --border:       rgba(127,0,178,0.18);
-      --border-hover: rgba(127,0,178,0.55);
-      --shadow:       rgba(127,0,178,0.12);
-      --grid-line:    rgba(127,0,178,0.06);
-      --hero-glow:    rgba(127,0,178,0.10);
-      --hero-glow2:   rgba(232,232,0,0.06);
-      --scroll-track: #F0EEFF;
-      --grad-text:    linear-gradient(90deg, #014ba0 0%, #7f00b2 50%, #999900 100%);
-    }
-
-    /* hero light-mode: fondo oscuro detrás del logo */
-    [data-theme="light"] .hero-logo-wrap {
-      background: radial-gradient(circle, rgba(83,0,132,0.42) 0%, rgba(1,75,160,0.18) 55%, transparent 80%);
-      box-shadow: 0 0 60px 16px rgba(127,0,178,0.14);
-    }
-    [data-theme="light"] .hero-logo-wrap img {
-      filter: drop-shadow(0 4px 20px rgba(145,32,189,0.5));
-    }
-    [data-theme="light"] .orbit { border-color: rgba(127,0,178,0.22); }
-    [data-theme="light"] .orbit-dot {
-      background: linear-gradient(135deg, #7f00b2, #e8e800);
-      box-shadow: 0 0 8px rgba(127,0,178,0.6);
-    }
-
-    /* ═══════════════════════════════════════
-       RESET & BASE
-    ═══════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-      transition: background var(--transition), color var(--transition);
-    }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--scroll-track); }
-    ::-webkit-scrollbar-thumb { background: var(--purple-mid); border-radius: 3px; }
-
-    /* ═══════════════════════════════════════
-       SCROLL ANIMATIONS
-    ═══════════════════════════════════════ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(48px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
-    }
-    .reveal.from-left  { transform: translateX(-56px); }
-    .reveal.from-right { transform: translateX(56px); }
-    .reveal.scale-up   { transform: scale(0.88); }
-    .reveal.visible {
-      opacity: 1;
-      transform: translate(0) scale(1);
-    }
-    /* stagger siblings */
-    .stagger > * { opacity: 0; transform: translateY(36px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .stagger > *.visible { opacity: 1; transform: translateY(0); }
-
-    /* ═══════════════════════════════════════
-       UTILITIES
-    ═══════════════════════════════════════ */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .grad-text  { background: var(--grad-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .section { padding: 100px 0; }
-    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--purple-mid); margin-bottom: 12px; }
-    .section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
-    .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; }
-    .divider { border: none; height: 1px; background: var(--border); }
-
-    .btn-primary {
-      display: inline-block; padding: 14px 32px; border-radius: 50px;
-      background: var(--grad); color: #fff; font-weight: 600; font-size: 0.95rem;
-      text-decoration: none; border: none; cursor: pointer;
-      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-primary:hover { opacity: 0.9; transform: translateY(-3px); box-shadow: 0 12px 32px rgba(107,33,168,0.4); }
-    .btn-outline {
-      display: inline-block; padding: 13px 30px; border-radius: 50px;
-      background: transparent; color: var(--text); font-weight: 600; font-size: 0.95rem;
-      text-decoration: none; border: 2px solid var(--border); cursor: pointer;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--border-hover); transform: translateY(-3px); }
-
-    /* ═══════════════════════════════════════
-       THEME TOGGLE
-    ═══════════════════════════════════════ */
-    .theme-toggle {
-      width: 44px; height: 44px; border-radius: 50%;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      color: var(--text); cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-      transition: all 0.25s;
-      flex-shrink: 0;
-    }
-    .theme-toggle:hover { border-color: var(--border-hover); transform: rotate(20deg); }
-
-    /* ═══════════════════════════════════════
-       NAVBAR
-    ═══════════════════════════════════════ */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      padding: 14px 0;
-      backdrop-filter: blur(20px);
-      background: var(--nav-bg);
-      border-bottom: 1px solid var(--border);
-      transition: background var(--transition), border-color var(--transition);
-    }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { height: 38px; object-fit: contain; }
-    .nav-logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.2rem; background: var(--grad-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
-
-    /* ═══════════════════════════════════════
-       MOBILE MENU
-    ═══════════════════════════════════════ */
-    .mobile-menu {
-      display: none; position: fixed; inset: 0; z-index: 999;
-      background: var(--bg); flex-direction: column;
-      align-items: center; justify-content: center; gap: 24px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { color: var(--text); text-decoration: none; font-size: 1.5rem; font-weight: 600; transition: color 0.2s; }
-    .mobile-menu a:hover { color: var(--purple-mid); }
-    .mobile-menu .close-btn { position: absolute; top: 24px; right: 24px; font-size: 1.6rem; cursor: pointer; color: var(--text-muted); background: none; border: none; }
-
-    /* ═══════════════════════════════════════
-       HERO
-    ═══════════════════════════════════════ */
-    .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      position: relative; overflow: hidden; padding-top: 80px;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--hero-glow) 0%, transparent 70%),
-                  radial-gradient(ellipse 35% 35% at 15% 60%, rgba(1,75,160,0.15) 0%, transparent 60%),
-                  radial-gradient(ellipse 40% 40% at 80% 80%, var(--hero-glow2) 0%, transparent 60%);
-      transition: background var(--transition);
-    }
-    .hero-grid {
-      position: absolute; inset: 0; pointer-events: none;
-      background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
-                        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 60px 60px;
-      transition: background-image var(--transition);
-    }
-    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;
-      padding: 6px 16px; border-radius: 50px; border: 1px solid var(--border);
-      background: rgba(107,33,168,0.1); font-size: 0.8rem; color: var(--purple-mid); font-weight: 500;
-      transition: border-color var(--transition);
-    }
-    .hero-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--purple-mid); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(145,32,189,0.6)} 50%{opacity:0.6;box-shadow:0 0 0 6px rgba(145,32,189,0)} }
-    .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
-    .hero p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 36px; max-width: 520px; }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-stats { display: flex; gap: 36px; margin-top: 52px; flex-wrap: wrap; }
-    .hero-stat strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 1.9rem; font-weight: 800; }
-    .hero-stat p { color: var(--text-muted); font-size: 0.78rem; }
-
-    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
-    .hero-logo-wrap {
-      width: 300px; height: 300px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(127,0,178,0.18) 0%, rgba(1,75,160,0.08) 60%, transparent 100%);
-      display: flex; align-items: center; justify-content: center;
-      animation: float 6s ease-in-out infinite;
-      position: relative; z-index: 1;
-    }
-    .hero-logo-wrap img { width: 240px; height: 240px; object-fit: contain; filter: drop-shadow(0 0 32px rgba(145,32,189,0.45)); }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
-    .orbit { position: absolute; border-radius: 50%; border: 1px dashed rgba(127,0,178,0.28); animation: spin linear infinite; }
-    .orbit-1 { width: 370px; height: 370px; animation-duration: 22s; }
-    .orbit-2 { width: 460px; height: 460px; animation-duration: 34s; animation-direction: reverse; }
-    @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-    .orbit-dot { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--grad); top: -5px; left: 50%; margin-left: -5px; box-shadow: 0 0 10px rgba(145,32,189,0.8); }
-
-    /* ═══════════════════════════════════════
-       WAVE ELEMENTS
-    ═══════════════════════════════════════ */
-
-    /* Sonar rings from logo */
-    .sonar-wrap {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      pointer-events: none;
-    }
-    .sonar-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 1.5px solid rgba(145,32,189,0.5);
-      animation: sonar 3.6s ease-out infinite;
-    }
-    .sonar-ring:nth-child(1) { animation-delay: 0s; }
-    .sonar-ring:nth-child(2) { animation-delay: 1.2s; }
-    .sonar-ring:nth-child(3) { animation-delay: 2.4s; }
-    @keyframes sonar {
-      0%   { width: 280px; height: 280px; opacity: 0.7; }
-      100% { width: 560px; height: 560px; opacity: 0; }
-    }
-
-    /* SVG wave divider */
-    .wave-divider {
-      width: 100%; overflow: hidden; line-height: 0;
-      margin: 0; padding: 0; position: relative;
-    }
-    .wave-divider svg {
-      display: block;
-      width: 200%;        /* doble ancho para el loop infinito */
-      height: 52px;
-      animation: wave-div-move 10s linear infinite;
-    }
-    .wave-divider .wave-path-a {
-      fill: none; stroke: var(--border); stroke-width: 1.5;
-      transition: stroke var(--transition);
-    }
-    .wave-divider .wave-path-b {
-      fill: none; stroke: var(--blue-mid); stroke-width: 1;
-      opacity: 0.30;
-      stroke-dasharray: 6 10;
-      transition: stroke var(--transition);
-      animation: wave-div-move 14s linear infinite reverse;
-    }
-    @keyframes wave-div-move {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Animated wave background in hero */
-    .hero-waves {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 160px; pointer-events: none; overflow: hidden;
-    }
-    .hero-waves svg { width: 200%; height: 100%; }
-    .hero-wave-path-1 {
-      fill: none; stroke: rgba(127,0,178,0.18); stroke-width: 2;
-      animation: wave-move 8s linear infinite;
-    }
-    .hero-wave-path-2 {
-      fill: none; stroke: rgba(1,75,160,0.14); stroke-width: 1.5;
-      animation: wave-move 12s linear infinite reverse;
-    }
-    .hero-wave-path-3 {
-      fill: none; stroke: rgba(232,232,0,0.10); stroke-width: 1;
-      animation: wave-move 6s linear infinite;
-    }
-    @keyframes wave-move {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    [data-theme="light"] .hero-wave-path-1 { stroke: rgba(127,0,178,0.12); }
-    [data-theme="light"] .hero-wave-path-2 { stroke: rgba(1,75,160,0.10); }
-    [data-theme="light"] .hero-wave-path-3 { stroke: rgba(232,232,0,0.12); }
-
-    /* ═══════════════════════════════════════
-       ABOUT
-    ═══════════════════════════════════════ */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 36px; }
-    .value-card {
-      padding: 20px; border-radius: var(--radius);
-      background: var(--bg-card); border: 1px solid var(--border);
-      transition: border-color 0.25s, transform 0.25s, background var(--transition);
-    }
-    .value-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
-    .value-icon { font-size: 1.5rem; margin-bottom: 10px; }
-    .value-card h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 5px; }
-    .value-card p { font-size: 0.78rem; color: var(--text-muted); }
-    .mission-vision { display: flex; flex-direction: column; gap: 18px; }
-    .mv-card {
-      padding: 28px; border-radius: var(--radius);
-      background: var(--bg-card2); border: 1px solid var(--border);
-      position: relative; overflow: hidden;
-      transition: background var(--transition), border-color var(--transition);
-    }
-    .mv-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--grad); }
-    .mv-card .mv-label { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--purple-mid); font-weight:700; margin-bottom:8px; }
-    .mv-card h3 { font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:700; margin-bottom:8px; }
-    .mv-card p { color:var(--text-muted); font-size:0.88rem; }
-
-    /* ═══════════════════════════════════════
-       SERVICES
-    ═══════════════════════════════════════ */
-    .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 22px; margin-top: 60px; }
-    .service-card {
-      padding: 32px; border-radius: var(--radius);
-      background: var(--bg-card); border: 1px solid var(--border);
-      transition: all 0.3s; position: relative; overflow: hidden;
-    }
-    .service-card:hover { border-color: var(--border-hover); transform: translateY(-5px); box-shadow: 0 20px 48px var(--shadow); }
-    .service-card.featured { border-color: rgba(212,160,23,0.3); background: var(--bg-card2); }
-    [data-theme="light"] .service-card { box-shadow: 0 2px 16px var(--shadow); }
-    .service-tag { display:inline-block; padding:4px 12px; border-radius:50px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; background:rgba(107,33,168,0.12); color:var(--purple-mid); margin-bottom:20px; }
-    .service-tag.gold { background:rgba(212,160,23,0.12); color:var(--gold); }
-    .service-icon { font-size:2.2rem; margin-bottom:16px; display:block; }
-    .service-card h3 { font-family:'Space Grotesk',sans-serif; font-size:1.2rem; font-weight:700; margin-bottom:12px; }
-    .service-card p { color:var(--text-muted); font-size:0.88rem; margin-bottom:18px; }
-    .service-price { font-size:0.82rem; color:var(--text-muted); }
-    .service-price strong { font-size:1.05rem; color:var(--text); }
-    .service-list { list-style:none; margin-bottom:22px; }
-    .service-list li { font-size:0.82rem; color:var(--text-muted); padding:5px 0; border-bottom:1px solid rgba(107,33,168,0.07); display:flex; gap:8px; align-items:flex-start; }
-    .service-list li::before { content:'✓'; color:var(--purple-mid); font-weight:700; flex-shrink:0; }
-
-    /* ═══════════════════════════════════════
-       PROJECTS / CHARTS
-    ═══════════════════════════════════════ */
-    .kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:40px; }
-    .kpi-card {
-      padding:26px; border-radius:var(--radius); text-align:center;
-      background:var(--bg-card); border:1px solid var(--border);
-      transition: all 0.3s;
-    }
-    .kpi-card:hover { border-color:var(--border-hover); transform:translateY(-3px); }
-    [data-theme="light"] .kpi-card { box-shadow:0 2px 12px var(--shadow); }
-    .kpi-val { font-family:'Space Grotesk',sans-serif; font-size:2rem; font-weight:800; margin-bottom:4px; }
-    .kpi-lbl { font-size:0.78rem; color:var(--text-muted); }
-    .charts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
-    .chart-card {
-      padding:26px; border-radius:var(--radius);
-      background:var(--bg-card); border:1px solid var(--border);
-      transition: background var(--transition), border-color var(--transition);
-    }
-    [data-theme="light"] .chart-card { box-shadow:0 2px 12px var(--shadow); }
-    .chart-card h4 { font-family:'Space Grotesk',sans-serif; font-weight:600; margin-bottom:4px; }
-    .chart-card p { font-size:0.8rem; color:var(--text-muted); margin-bottom:18px; }
-    .chart-card canvas { max-height:260px; }
-    .chart-full { grid-column:1/-1; }
-
-    /* ═══════════════════════════════════════
-       TEAM
-    ═══════════════════════════════════════ */
-    .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:60px; }
-    .team-card {
-      border-radius:var(--radius); overflow:hidden;
-      background:var(--bg-card); border:1px solid var(--border);
-      transition: all 0.3s;
-    }
-    .team-card:hover { border-color:var(--border-hover); transform:translateY(-5px); box-shadow:0 20px 48px var(--shadow); }
-    [data-theme="light"] .team-card { box-shadow:0 2px 12px var(--shadow); }
-    .team-photo {
-      width:100%; aspect-ratio:1;
-      background:linear-gradient(135deg,rgba(107,33,168,0.15),rgba(212,160,23,0.08));
-      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
-      border-bottom:1px solid var(--border); overflow:hidden;
-    }
-    .team-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
-    .team-photo .avatar-icon { font-size:3rem; opacity:0.3; }
-    .team-photo .photo-hint { font-size:0.7rem; color:var(--text-muted); opacity:0.7; }
-    .team-info { padding:20px; }
-    .team-info h4 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.92rem; margin-bottom:4px; }
-    .team-info .role { font-size:0.75rem; color:var(--purple-mid); font-weight:600; margin-bottom:8px; }
-    .team-info .degree { font-size:0.73rem; color:var(--text-muted); line-height:1.5; margin-bottom:12px; }
-    .portfolio-btn {
-      display: inline-flex; align-items: center; gap: 4px;
-      margin-top: 4px; padding: 7px 14px; border-radius: 50px;
-      font-size: 0.75rem; font-weight: 600; text-decoration: none;
-      background: var(--grad); color: #fff;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-    .portfolio-btn:hover { opacity: 0.88; transform: translateY(-2px); }
-
-    /* ═══════════════════════════════════════
-       CONTACT
-    ═══════════════════════════════════════ */
-    .contact-wrap { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; margin-top:60px; }
-    .contact-item { display:flex; gap:16px; margin-bottom:26px; }
-    .contact-item-icon {
-      width:48px; height:48px; border-radius:12px; flex-shrink:0;
-      background:rgba(107,33,168,0.1); border:1px solid var(--border);
-      display:flex; align-items:center; justify-content:center; font-size:1.2rem;
-      transition:border-color var(--transition), background var(--transition);
-    }
-    .contact-item-text h5 { font-weight:600; font-size:0.88rem; margin-bottom:2px; }
-    .contact-item-text p { color:var(--text-muted); font-size:0.82rem; }
-    .contact-form {
-      background:var(--bg-card); border:1px solid var(--border);
-      border-radius:var(--radius); padding:36px;
-      transition:background var(--transition), border-color var(--transition);
-    }
-    [data-theme="light"] .contact-form { box-shadow:0 4px 24px var(--shadow); }
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .form-group { margin-bottom:16px; }
-    .form-group label { display:block; font-size:0.8rem; font-weight:500; color:var(--text-muted); margin-bottom:7px; }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width:100%; padding:12px 16px;
-      background:rgba(107,33,168,0.05); border:1px solid var(--border);
-      border-radius:10px; color:var(--text); font-family:inherit; font-size:0.88rem;
-      transition:border-color 0.2s, background 0.2s;
-    }
-    [data-theme="light"] .form-group input,
-    [data-theme="light"] .form-group textarea,
-    [data-theme="light"] .form-group select { background:#F8F5FF; }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus { outline:none; border-color:var(--purple-mid); }
-    .form-group textarea { resize:vertical; min-height:110px; }
-    .form-group select option { background:var(--bg-card); color:var(--text); }
-    .form-success {
-      display:none; padding:14px; border-radius:10px; margin-top:14px;
-      background:rgba(107,33,168,0.12); border:1px solid var(--purple-mid);
-      font-size:0.88rem; color:var(--text); text-align:center;
-    }
-
-    /* ═══════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════ */
-    footer {
-      background:var(--bg-card); border-top:1px solid var(--border);
-      padding:60px 0 28px;
-      transition:background var(--transition), border-color var(--transition);
-    }
-    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:48px; }
-    .footer-brand p { font-size:0.83rem; color:var(--text-muted); max-width:260px; line-height:1.7; margin-top:14px; }
-    .footer-col h5 { font-weight:600; font-size:0.83rem; margin-bottom:14px; color:var(--text); }
-    .footer-col ul { list-style:none; }
-    .footer-col li { margin-bottom:9px; }
-    .footer-col a { color:var(--text-muted); text-decoration:none; font-size:0.83rem; transition:color 0.2s; }
-    .footer-col a:hover { color:var(--text); }
-    .footer-bottom { border-top:1px solid var(--border); padding-top:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
-    .footer-bottom p { font-size:0.78rem; color:var(--text-muted); }
-    .social-links { display:flex; gap:10px; }
-    .social-link {
-      width:34px; height:34px; border-radius:8px;
-      background:rgba(107,33,168,0.08); border:1px solid var(--border);
-      display:flex; align-items:center; justify-content:center;
-      color:var(--text-muted); text-decoration:none; font-size:0.8rem; font-weight:600;
-      transition:all 0.2s;
-    }
-    .social-link:hover { background:rgba(107,33,168,0.2); color:var(--text); border-color:var(--border-hover); }
-
-    /* ═══════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════ */
-    @media (max-width:900px) {
-      .hero-inner { grid-template-columns:1fr; text-align:center; }
-      .hero-visual { display:none; }
-      .hero-actions, .hero-stats { justify-content:center; }
-      .about-grid, .contact-wrap { grid-template-columns:1fr; }
-      .services-grid, .charts-grid { grid-template-columns:1fr; }
-      .chart-full { grid-column:auto; }
-      .team-grid { grid-template-columns:repeat(2,1fr); }
-      .kpi-row { grid-template-columns:repeat(2,1fr); }
-      .footer-grid { grid-template-columns:1fr 1fr; }
-      .nav-links, .nav-right > .btn-primary { display:none; }
-      .hamburger { display:flex; }
-    }
-    @media (max-width:560px) {
-      .team-grid, .values-grid { grid-template-columns:1fr; }
-      .form-row { grid-template-columns:1fr; }
-      .footer-grid { grid-template-columns:1fr; }
-      .kpi-row { grid-template-columns:1fr 1fr; }
-    }
-  </style>
+  <!-- Theme: aplicar antes de renderizar para evitar flash -->
+  <script src="js/theme.js"></script>
 </head>
 <body>
 
-<!-- ══ MOBILE MENU ══ -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="close-btn" onclick="toggleMenu()">✕</button>
-  <a href="#inicio"    onclick="toggleMenu()">Inicio</a>
-  <a href="#nosotros"  onclick="toggleMenu()">Nosotros</a>
-  <a href="#servicios" onclick="toggleMenu()">Servicios</a>
-  <a href="#proyectos" onclick="toggleMenu()">Proyectos</a>
-  <a href="#equipo"    onclick="toggleMenu()">Equipo</a>
-  <a href="#contacto"  onclick="toggleMenu()">Contacto</a>
-</div>
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="container navbar-inner">
 
-<!-- ══ NAVBAR ══ -->
-<nav>
-  <div class="container nav-inner">
-    <a href="#inicio" class="nav-logo">
-      <img src="assets/logo-color-icon.png" alt="SoftWaves logo" onerror="this.style.display='none'" />
-      <span class="nav-logo-text">SoftWaves</span>
+    <a href="#hero" class="navbar-brand" aria-label="Inicio">
+      <div class="brand-initials" aria-hidden="true">IA</div>
+      <span class="brand-name">Ignacio Andrade</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#equipo">Equipo</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+
+    <ul class="navbar-links" role="list">
+      <li><a href="#about"      class="active">Sobre mí</a></li>
+      <li><a href="#experience">Experiencia</a></li>
+      <li><a href="#skills">    Habilidades</a></li>
+      <li><a href="#projects">  Proyectos</a></li>
+      <li><a href="#education"> Formación</a></li>
+      <li><a href="#softwaves"> SoftWaves</a></li>
+      <li><a href="#contact">   Contacto</a></li>
     </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" title="Cambiar tema" onclick="toggleTheme()">🌙</button>
-      <a href="#contacto" class="btn-primary" style="padding:10px 22px;font-size:0.85rem;">Solicitar info</a>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+
+    <div class="navbar-controls">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <i class="ph ph-moon icon-moon"  aria-hidden="true"></i>
+        <i class="ph ph-sun  icon-sun"   aria-hidden="true"></i>
+      </button>
+
+      <button id="hamburger" class="hamburger" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
+
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
-<section class="hero" id="inicio">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="container hero-inner">
-    <div>
-      <div class="hero-badge reveal">Ameca, Jalisco · Fundada 2025</div>
-      <h1 class="reveal" style="transition-delay:0.1s">
-        Tecnología empresarial<br /><span class="grad-text">a tu medida</span>
-      </h1>
-      <p class="reveal" style="transition-delay:0.2s">Desarrollamos software personalizado para PyMEs mexicanas con arquitectura de microservicios: más rápido, más económico, sin comprometer la calidad.</p>
-      <div class="hero-actions reveal" style="transition-delay:0.3s">
-        <a href="#servicios" class="btn-primary">Ver servicios</a>
-        <a href="#contacto"  class="btn-outline">Contáctanos</a>
-      </div>
-      <div class="hero-stats reveal" style="transition-delay:0.45s">
-        <div class="hero-stat">
-          <strong><span class="grad-text">60%</span></strong>
-          <p>más rápido que<br/>desarrollo desde cero</p>
-        </div>
-        <div class="hero-stat">
-          <strong><span class="grad-text">4.9M+</span></strong>
-          <p>PyMEs sin software<br/>especializado</p>
-        </div>
-        <div class="hero-stat">
-          <strong><span class="grad-text">3</span></strong>
-          <p>modelos de<br/>contratación flexibles</p>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <!-- Sonar rings -->
-      <div class="sonar-wrap">
-        <div class="sonar-ring"></div>
-        <div class="sonar-ring"></div>
-        <div class="sonar-ring"></div>
-      </div>
-      <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
-      <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
-      <div class="hero-logo-wrap">
-        <img src="assets/logo-color-full.png" alt="SoftWaves" onerror="this.style.display='none'" />
-      </div>
-    </div>
+<!-- Menú móvil (overlay) -->
+<div id="mobile-menu" class="mobile-menu" aria-label="Menú móvil">
+  <a href="#about"      data-section="about">      Sobre mí</a>
+  <a href="#experience" data-section="experience"> Experiencia</a>
+  <a href="#skills"     data-section="skills">     Habilidades</a>
+  <a href="#projects"   data-section="projects">   Proyectos</a>
+  <a href="#education"  data-section="education">  Formación</a>
+  <a href="#softwaves"  data-section="softwaves">  SoftWaves</a>
+  <a href="#contact"    data-section="contact">    Contacto</a>
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
   </div>
 
-  <!-- Animated wave lines at bottom of hero -->
-  <div class="hero-waves">
-    <svg viewBox="0 0 2880 160" preserveAspectRatio="none">
-      <path class="hero-wave-path-1"
-        d="M0,80 C180,40 360,120 540,80 C720,40 900,120 1080,80 C1260,40 1440,120 1620,80 C1800,40 1980,120 2160,80 C2340,40 2520,120 2700,80 C2790,60 2840,90 2880,80"/>
-      <path class="hero-wave-path-2"
-        d="M0,100 C240,60 480,140 720,100 C960,60 1200,140 1440,100 C1680,60 1920,140 2160,100 C2400,60 2640,140 2880,100"/>
-      <path class="hero-wave-path-3"
-        d="M0,60 C120,20 240,100 360,60 C480,20 600,100 720,60 C840,20 960,100 1080,60 C1200,20 1320,100 1440,60 C1560,20 1680,100 1800,60 C1920,20 2040,100 2160,60 C2280,20 2400,100 2520,60 C2640,20 2760,100 2880,60"/>
+  <div class="container hero-inner">
+
+    <!-- Contenido texto -->
+    <div class="hero-content">
+      <p class="hero-greeting">¡Hola! Soy</p>
+
+      <h1 class="hero-name">
+        <span class="first-name">Ignacio</span>
+        <span class="last-name">Andrade Salazar</span>
+      </h1>
+
+      <div class="hero-typewriter" aria-live="polite">
+        <span class="typewriter-prefix">Soy&nbsp;</span>
+        <span id="typewriter-text"></span>
+        <span class="typewriter-cursor" aria-hidden="true"></span>
+      </div>
+
+      <p class="hero-description">
+        Apasionado por la tecnología y el emprendimiento, combino tres formaciones académicas
+        con más de 5 años de experiencia construyendo soluciones web que hacen la diferencia.
+        Basado en <strong>Ameca, Jalisco</strong>.
+      </p>
+
+      <div class="hero-chips">
+        <span class="hero-chip">
+          <i class="ph ph-map-pin"></i> Ameca, Jalisco
+        </span>
+        <span class="hero-chip">
+          <i class="ph ph-briefcase"></i> 5+ años de experiencia
+        </span>
+        <span class="hero-chip">
+          <i class="ph ph-trophy"></i> 3 Hackatones Swift
+        </span>
+        <span class="hero-chip">
+          <i class="ph ph-graduation-cap"></i> Maestría en curso
+        </span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="ph ph-folder-open"></i> Ver proyectos
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="ph ph-envelope"></i> Contáctame
+        </a>
+      </div>
+
+      <div class="hero-social">
+        <span class="social-label">Redes</span>
+        <div class="social-divider" aria-hidden="true"></div>
+        <a href="https://github.com/Minato97" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="ph ph-github-logo"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="ph ph-linkedin-logo"></i>
+        </a>
+        <a href="https://www.instagram.com/nacho_as97/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="ph ph-instagram-logo"></i>
+        </a>
+        <a href="mailto:andrade.ignacio97@gmail.com" aria-label="Email">
+          <i class="ph ph-envelope-simple"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Visual / Avatar -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-avatar-wrap">
+        <div class="hero-avatar">
+          <!-- Reemplaza esta imagen con tu foto: assets/img/profile.jpg -->
+          <img src="assets/img/profile.jpg"
+               alt="Foto de Ignacio Andrade Salazar"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-placeholder" style="display:none;">IA</div>
+        </div>
+
+        <!-- Badges flotantes -->
+        <div class="hero-badge hero-badge-exp">
+          <span class="badge-icon">💻</span>
+          <div>
+            <div style="font-size:0.7rem;color:var(--text-muted);">Experiencia</div>
+            <div>5+ años Dev</div>
+          </div>
+        </div>
+
+        <div class="hero-badge hero-badge-hack">
+          <span class="badge-icon">🏆</span>
+          <div>
+            <div style="font-size:0.7rem;color:var(--text-muted);">Hackatones</div>
+            <div>3 × Swift</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /hero-inner -->
+
+  <!-- Wave inferior -->
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--bg-primary)" />
     </svg>
   </div>
+
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-mouse"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
-<!-- ══ ABOUT ══ -->
-<section class="section" id="nosotros">
+
+<!-- ============================================================
+     ABOUT — Sobre mí
+     ============================================================ -->
+<section id="about">
   <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Conóceme</span>
+      <h2 class="section-title">Sobre <span>mí</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
     <div class="about-grid">
-      <div class="about-text">
-        <p class="section-label reveal">Quiénes somos</p>
-        <h2 class="section-title reveal" style="transition-delay:0.1s">Soluciones digitales <span class="grad-text">inteligentes</span></h2>
-        <p class="section-sub reveal" style="transition-delay:0.15s;margin-bottom:16px">SoftWaves es una empresa de desarrollo de software especializada en PyMEs mexicanas. Construimos sistemas a la medida reutilizando módulos de backend probados, personalizando el frontend para cada cliente.</p>
-        <p class="reveal" style="transition-delay:0.2s;color:var(--text-muted);font-size:0.9rem;margin-bottom:36px">Nuestra arquitectura de microservicios reutilizables nos permite entregar proyectos en <strong style="color:var(--text)">30–60% menos tiempo</strong> que el desarrollo tradicional, sin sacrificar calidad ni personalización.</p>
-        <div class="values-grid stagger">
-          <div class="value-card">
-            <div class="value-icon">🚀</div>
-            <h4>Innovación continua</h4>
-            <p>Adoptamos tecnologías emergentes para ofrecer soluciones de vanguardia.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">🤝</div>
-            <h4>Compromiso con el cliente</h4>
-            <p>El éxito del cliente es nuestro éxito. Atención personalizada en cada proyecto.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">🔍</div>
-            <h4>Transparencia total</h4>
-            <p>Comunicación abierta y honesta en cada fase del proyecto.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">⚡</div>
-            <h4>Agilidad</h4>
-            <p>Entregas iterativas, feedback constante y adaptación rápida.</p>
-          </div>
-        </div>
-      </div>
-      <div class="mission-vision stagger">
-        <div class="mv-card">
-          <div class="mv-label">Misión</div>
-          <h3>Empoderar a las PyMEs con tecnología accesible</h3>
-          <p>Soluciones de software personalizadas, ágiles y accesibles, construidas sobre arquitectura de microservicios moderna que entrega tecnología de alto nivel en tiempos reducidos y costos competitivos.</p>
-        </div>
-        <div class="mv-card">
-          <div class="mv-label">Visión</div>
-          <h3>Referente en desarrollo para PyMEs al 2028</h3>
-          <p>Ser la empresa de desarrollo de software de referencia para las PyMEs de México y América Latina, reconocida por calidad, velocidad de entrega y solidez de sus soluciones.</p>
-        </div>
-        <div class="mv-card">
-          <div class="mv-label">Propuesta de valor</div>
-          <h3>El mejor ROI en software a la medida</h3>
-          <p>Menor tiempo de desarrollo, costos reducidos, escalabilidad por módulos y soporte continuo con mensualidades accesibles para PyMEs mexicanas.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<div class="wave-divider">
-  <svg viewBox="0 0 2880 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- ola principal — fluye de izquierda a derecha -->
-    <path class="wave-path-a"
-      d="M0,26 C90,8 180,44 270,26 C360,8 450,44 540,26 C630,8 720,44 810,26 C900,8 990,44 1080,26 C1170,8 1260,44 1350,26 C1440,8 1530,44 1620,26 C1710,8 1800,44 1890,26 C1980,8 2070,44 2160,26 C2250,8 2340,44 2430,26 C2520,8 2610,44 2700,26 C2790,8 2880,44 2880,26"/>
-    <!-- ola secundaria punteada — fluye en sentido contrario -->
-    <path class="wave-path-b"
-      d="M0,32 C120,14 240,50 360,32 C480,14 600,50 720,32 C840,14 960,50 1080,32 C1200,14 1320,50 1440,32 C1560,14 1680,50 1800,32 C1920,14 2040,50 2160,32 C2280,14 2400,50 2520,32 C2640,14 2760,50 2880,32"/>
-  </svg>
-</div>
+      <!-- Texto -->
+      <div class="about-content fade-left">
+        <p class="about-tagline">
+          Tres títulos, una pasión: crear tecnología que resuelve problemas reales.
+        </p>
 
-<!-- ══ SERVICES ══ -->
-<section class="section" id="servicios">
-  <div class="container">
-    <p class="section-label reveal">Productos y servicios</p>
-    <h2 class="section-title reveal" style="transition-delay:0.1s">Todo lo que tu empresa<br/><span class="grad-text">necesita para crecer</span></h2>
-    <p class="section-sub reveal" style="transition-delay:0.15s">Cuatro líneas de productos con modelos de contratación claros y flexibles, diseñados para adaptarse al presupuesto y necesidades de cada empresa.</p>
+        <p class="about-text">
+          Soy <strong>Licenciado en Administración</strong> con especialidad en emprendimiento,
+          <strong>Ingeniero en Electrónica y Computación</strong> y actualmente curso el segundo
+          semestre de la <strong>Maestría en Ingeniería de Software</strong> en CUValles, Universidad
+          de Guadalajara. Tengo más de 5 años desarrollando herramientas web que impactan a
+          universidades, empresas y gobiernos.
+        </p>
 
-    <div class="services-grid stagger" style="margin-top:56px">
-      <div class="service-card">
-        <div class="service-tag">Proyecto cerrado</div>
-        <span class="service-icon">🏗️</span>
-        <h3>Desarrollo a la Medida</h3>
-        <p>Software completamente personalizado. Al concluir, el cliente es propietario absoluto del código fuente, documentación y derechos de autor.</p>
-        <ul class="service-list">
-          <li>50% al inicio · 50% en entrega</li>
-          <li>Código fuente + documentación técnica</li>
-          <li>Transmisión formal de derechos de autor</li>
-          <li>Manual de usuario incluido</li>
-          <li>Reuniones de seguimiento mensuales</li>
-        </ul>
-        <div class="service-price">Desde <strong>$15,000</strong> hasta <strong>$120,000 MXN</strong></div>
-      </div>
+        <p class="about-text">
+          He participado en <strong>tres hackatones nacionales de Swift</strong> (Apple Developer),
+          lo que me ha forjado para trabajar bajo presión, en equipo y con visión de producto.
+          Manejo lenguajes como PHP, Python, C/C++, Go, Java, Swift y JavaScript, además de frameworks
+          como Laravel, Vue, Quasar y SwiftUI.
+        </p>
 
-      <div class="service-card">
-        <div class="service-tag">SaaS mensual</div>
-        <span class="service-icon">☁️</span>
-        <h3>Software como Servicio</h3>
-        <p>El cliente renta el sistema. SoftWaves administra, actualiza y respalda la información. Incluye opción de compra total en cualquier momento.</p>
-        <ul class="service-list">
-          <li>30% al inicio + cuota mensual</li>
-          <li>Mantenimiento, respaldos y actualizaciones</li>
-          <li>Hosting y monitoreo incluidos</li>
-          <li>Opción de compra total disponible</li>
-          <li>Capacitación de uso incluida</li>
-        </ul>
-        <div class="service-price">Desde <strong>$2,500</strong> hasta <strong>$12,000 MXN/mes</strong></div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-tag">Por hora</div>
-        <span class="service-icon">💡</span>
-        <h3>Consultoría Tecnológica</h3>
-        <p>Asesoría especializada para identificar necesidades tecnológicas, detectar ineficiencias y proponer soluciones antes de invertir en desarrollo.</p>
-        <ul class="service-list">
-          <li>Diagnóstico gratuito de 30 min</li>
-          <li>Análisis de procesos actuales</li>
-          <li>Auditoría de sistemas existentes</li>
-          <li>Propuesta de solución personalizada</li>
-          <li>Reporte ejecutivo entregable</li>
-        </ul>
-        <div class="service-price">Desde <strong>$600</strong> hasta <strong>$1,500 MXN/hora</strong></div>
-      </div>
-
-      <div class="service-card featured">
-        <div class="service-tag gold">⭐ Premium</div>
-        <span class="service-icon">🤖</span>
-        <h3>Automatización con Inteligencia Artificial</h3>
-        <p>Integración de IA para automatizar tareas, análisis de datos, predicción de ventas y atención automática a clientes.</p>
-        <ul class="service-list">
-          <li>Complemento sin costo de integración para clientes SoftWaves</li>
-          <li>Licencia independiente disponible</li>
-          <li>Predicción de ventas y análisis de datos</li>
-          <li>Respuestas automáticas a clientes</li>
-          <li>Escala según volumen de uso</li>
-        </ul>
-        <div class="service-price">Desde <strong>$1,500</strong> hasta <strong>$8,000 MXN/mes</strong></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wave-divider">
-  <svg viewBox="0 0 2880 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- ola principal — fluye de izquierda a derecha -->
-    <path class="wave-path-a"
-      d="M0,26 C90,8 180,44 270,26 C360,8 450,44 540,26 C630,8 720,44 810,26 C900,8 990,44 1080,26 C1170,8 1260,44 1350,26 C1440,8 1530,44 1620,26 C1710,8 1800,44 1890,26 C1980,8 2070,44 2160,26 C2250,8 2340,44 2430,26 C2520,8 2610,44 2700,26 C2790,8 2880,44 2880,26"/>
-    <!-- ola secundaria punteada — fluye en sentido contrario -->
-    <path class="wave-path-b"
-      d="M0,32 C120,14 240,50 360,32 C480,14 600,50 720,32 C840,14 960,50 1080,32 C1200,14 1320,50 1440,32 C1560,14 1680,50 1800,32 C1920,14 2040,50 2160,32 C2280,14 2400,50 2520,32 C2640,14 2760,50 2880,32"/>
-  </svg>
-</div>
-
-<!-- ══ PROJECTS / CHARTS ══ -->
-<section class="section" id="proyectos">
-  <div class="container">
-    <p class="section-label reveal">Portafolio & métricas</p>
-    <h2 class="section-title reveal" style="transition-delay:0.1s">Proyectos realizados &<br/><span class="grad-text">resultados comprobados</span></h2>
-    <p class="section-sub reveal" style="transition-delay:0.15s;margin-bottom:48px">Datos de nuestra trayectoria de proyectos, distribución por sector y proyecciones de crecimiento.</p>
-
-    <div class="kpi-row stagger">
-      <div class="kpi-card">
-        <div class="kpi-val grad-text">24</div>
-        <div class="kpi-lbl">Proyectos entregados</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-val grad-text">18</div>
-        <div class="kpi-lbl">Clientes activos</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-val grad-text">60%</div>
-        <div class="kpi-lbl">Reducción en tiempo de entrega</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-val grad-text">100%</div>
-        <div class="kpi-lbl">Satisfacción del cliente</div>
-      </div>
-    </div>
-
-    <div class="charts-grid">
-      <div class="chart-card reveal">
-        <h4>Proyectos por sector</h4>
-        <p>Distribución por industria</p>
-        <canvas id="chartSector"></canvas>
-      </div>
-      <div class="chart-card reveal" style="transition-delay:0.15s">
-        <h4>Distribución de ingresos por servicio</h4>
-        <p>Porcentaje según tipo de contratación</p>
-        <canvas id="chartIngresos"></canvas>
-      </div>
-      <div class="chart-card chart-full reveal" style="transition-delay:0.1s">
-        <h4>Proyección de ingresos — Año 1 (MXN)</h4>
-        <p>Ingresos vs costos fijos mensuales · escenario conservador</p>
-        <canvas id="chartProyeccion"></canvas>
-      </div>
-      <div class="chart-card reveal">
-        <h4>Crecimiento de clientes</h4>
-        <p>Clientes acumulados por mes</p>
-        <canvas id="chartClientes"></canvas>
-      </div>
-      <div class="chart-card reveal" style="transition-delay:0.15s">
-        <h4>Tecnologías más utilizadas</h4>
-        <p>Stack tecnológico en proyectos entregados</p>
-        <canvas id="chartTech"></canvas>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wave-divider">
-  <svg viewBox="0 0 2880 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- ola principal — fluye de izquierda a derecha -->
-    <path class="wave-path-a"
-      d="M0,26 C90,8 180,44 270,26 C360,8 450,44 540,26 C630,8 720,44 810,26 C900,8 990,44 1080,26 C1170,8 1260,44 1350,26 C1440,8 1530,44 1620,26 C1710,8 1800,44 1890,26 C1980,8 2070,44 2160,26 C2250,8 2340,44 2430,26 C2520,8 2610,44 2700,26 C2790,8 2880,44 2880,26"/>
-    <!-- ola secundaria punteada — fluye en sentido contrario -->
-    <path class="wave-path-b"
-      d="M0,32 C120,14 240,50 360,32 C480,14 600,50 720,32 C840,14 960,50 1080,32 C1200,14 1320,50 1440,32 C1560,14 1680,50 1800,32 C1920,14 2040,50 2160,32 C2280,14 2400,50 2520,32 C2640,14 2760,50 2880,32"/>
-  </svg>
-</div>
-
-<!-- ══ TEAM ══ -->
-<section class="section" id="equipo">
-  <div class="container">
-    <p class="section-label reveal">Equipo fundador</p>
-    <h2 class="section-title reveal" style="transition-delay:0.1s">Las personas detrás de<br/><span class="grad-text">SoftWaves</span></h2>
-    <p class="section-sub reveal" style="transition-delay:0.15s">Un equipo multidisciplinario que combina ingeniería, administración, diseño y gestión de talento.</p>
-
-    <div class="team-grid stagger">
-      <div class="team-card">
-        <div class="team-photo">
-          <!-- Foto de Ignacio: coloca tu imagen en assets/ignacio.jpg -->
-          <img src="assets/ignacio.jpg" alt="Ignacio Andrade" onerror="this.outerHTML='<span class=\'avatar-icon\'>👤</span><span class=\'photo-hint\'>Foto por agregar</span>'" />
-        </div>
-        <div class="team-info">
-          <h4>Ing. Ignacio Andrade Salazar</h4>
-          <div class="role">CEO & Fundador</div>
-          <div class="degree">Lic. en Administración · Ing. en Electrónica y Computación · M.I.S. en curso</div>
-          <a href="https://minato97.github.io/softwaves-portafolio-ignacio-andrade/" target="_blank" rel="noopener" class="portfolio-btn">Ver portafolio →</a>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/martin.jpg" alt="Martín Andrade" onerror="this.outerHTML='<span class=\'avatar-icon\'>👤</span><span class=\'photo-hint\'>Foto por agregar</span>'" />
-        </div>
-        <div class="team-info">
-          <h4>Mtro. Martín J. Andrade Salazar</h4>
-          <div class="role">Jefe de Desarrollo Backend & Frontend</div>
-          <div class="degree">Lic. en Tecnologías de la Información · Maestro en Ingeniería de Software</div>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/edgar.jpg" alt="Edgar Guerrero" onerror="this.outerHTML='<span class=\'avatar-icon\'>👤</span><span class=\'photo-hint\'>Foto por agregar</span>'" />
-        </div>
-        <div class="team-info">
-          <h4>Ing. Edgar G. Guerrero Santana</h4>
-          <div class="role">Diseño & Marketing</div>
-          <div class="degree">Ing. en Electrónica y Computación · Certificación en Diseño UI/UX</div>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/eveley.jpg" alt="Eveley Ortiz" onerror="this.outerHTML='<span class=\'avatar-icon\'>👤</span><span class=\'photo-hint\'>Foto por agregar</span>'" />
-        </div>
-        <div class="team-info">
-          <h4>Ing. Evelyn Michel Ortiz Fajardo</h4>
-          <div class="role">Recursos Humanos & Gestión de Personal</div>
-          <div class="degree">Ing. en Instrumentación Electrónica y Nanosensores · Diplomado en RRHH</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wave-divider">
-  <svg viewBox="0 0 2880 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- ola principal — fluye de izquierda a derecha -->
-    <path class="wave-path-a"
-      d="M0,26 C90,8 180,44 270,26 C360,8 450,44 540,26 C630,8 720,44 810,26 C900,8 990,44 1080,26 C1170,8 1260,44 1350,26 C1440,8 1530,44 1620,26 C1710,8 1800,44 1890,26 C1980,8 2070,44 2160,26 C2250,8 2340,44 2430,26 C2520,8 2610,44 2700,26 C2790,8 2880,44 2880,26"/>
-    <!-- ola secundaria punteada — fluye en sentido contrario -->
-    <path class="wave-path-b"
-      d="M0,32 C120,14 240,50 360,32 C480,14 600,50 720,32 C840,14 960,50 1080,32 C1200,14 1320,50 1440,32 C1560,14 1680,50 1800,32 C1920,14 2040,50 2160,32 C2280,14 2400,50 2520,32 C2640,14 2760,50 2880,32"/>
-  </svg>
-</div>
-
-<!-- ══ CONTACT ══ -->
-<section class="section" id="contacto">
-  <div class="container">
-    <p class="section-label reveal">Contáctanos</p>
-    <h2 class="section-title reveal" style="transition-delay:0.1s">¿Listo para dar el salto<br/><span class="grad-text">digital?</span></h2>
-    <p class="section-sub reveal" style="transition-delay:0.15s">Cuéntanos sobre tu proyecto. La primera sesión de diagnóstico es <strong>gratuita</strong>. Respondemos en menos de 24 horas.</p>
-
-    <div class="contact-wrap">
-      <div class="contact-info reveal from-left">
-        <div class="contact-item">
-          <div class="contact-item-icon">📍</div>
-          <div class="contact-item-text">
-            <h5>Ubicación</h5>
-            <p>Ameca, Jalisco (Región Valles)<br/>México · Operación 100% remota</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">📧</div>
-          <div class="contact-item-text">
-            <h5>Correo electrónico</h5>
-            <p>softwaves.contacto@gmail.com</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">💬</div>
-          <div class="contact-item-text">
-            <h5>WhatsApp</h5>
-            <p>Disponible para consultas rápidas<br/>y coordinación de reuniones</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">🕐</div>
-          <div class="contact-item-text">
-            <h5>Horario de atención</h5>
-            <p>Lunes a Viernes · 9:00 – 18:00 hrs<br/>Zona horaria: CST (UTC-6)</p>
-          </div>
-        </div>
-        <div style="padding:22px;border-radius:var(--radius);background:rgba(107,33,168,0.08);border:1px solid var(--border);margin-top:8px">
-          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7">
-            <strong style="color:var(--text)">Primera sesión gratuita</strong><br/>
-            Agenda una reunión de diagnóstico de 30 minutos sin costo. Analizamos las necesidades de tu empresa y proponemos la mejor solución tecnológica.
+        <blockquote class="about-philosophy">
+          <p>
+            Soy una persona que busca siempre mejorar su versión de sí misma. Confío en que cada
+            persona tiene una historia escrita y que cada paso, bueno o malo, es necesario para
+            alcanzar la meta.
           </p>
+        </blockquote>
+
+        <!-- Estadísticas -->
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-count="5" data-suffix="+">0+</div>
+            <div class="stat-label">Años de<br>experiencia</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="10" data-suffix="+">0+</div>
+            <div class="stat-label">Proyectos<br>desarrollados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label">Hackatones<br>Swift</div>
+          </div>
+        </div>
+
+        <!-- Info de contacto rápido -->
+        <div class="about-info-list">
+          <div class="info-item">
+            <div class="info-icon"><i class="ph ph-map-pin"></i></div>
+            <span>Ameca, Jalisco — 2 h de Guadalajara</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="ph ph-envelope-simple"></i></div>
+            <a href="mailto:andrade.ignacio97@gmail.com">andrade.ignacio97@gmail.com</a>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="ph ph-github-logo"></i></div>
+            <a href="https://github.com/Minato97" target="_blank" rel="noopener">github.com/Minato97</a>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="ph ph-linkedin-logo"></i></div>
+            <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" rel="noopener">LinkedIn — Ignacio Andrade Salazar</a>
+          </div>
         </div>
       </div>
 
-      <div class="contact-form reveal from-right" style="transition-delay:0.1s">
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;margin-bottom:4px;">Solicitar información</h3>
-        <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:24px">Completa el formulario y te contactamos a la brevedad.</p>
-        <form id="contactForm" onsubmit="submitForm(event)">
+      <!-- Visual: tarjetas de roles -->
+      <div class="about-visual fade-right">
+        <div class="about-roles-grid">
+
+          <div class="role-card featured">
+            <div class="role-icon">🎓</div>
+            <div>
+              <div class="role-title">Triple formación académica</div>
+              <div class="role-desc">
+                Administración + Electrónica y Computación + Maestría en Ing. de Software.
+                Una visión técnica y de negocios en una sola persona.
+              </div>
+            </div>
+          </div>
+
+          <div class="role-card">
+            <div class="role-icon">⚙️</div>
+            <div class="role-title">Full Stack</div>
+            <div class="role-desc">Backend sólido en Laravel y frontends modernos con Vue/Quasar.</div>
+          </div>
+
+          <div class="role-card">
+            <div class="role-icon">📱</div>
+            <div class="role-title">Mobile</div>
+            <div class="role-desc">Apps PWA con Quasar/Cordova y apps nativas en SwiftUI.</div>
+          </div>
+
+          <div class="role-card">
+            <div class="role-icon">🏢</div>
+            <div class="role-title">Gestión</div>
+            <div class="role-desc">Liderazgo de equipos, modelos de negocio y planeación estratégica.</div>
+          </div>
+
+          <div class="role-card">
+            <div class="role-icon">🔬</div>
+            <div class="role-title">Investigación</div>
+            <div class="role-desc">Tesis activa: sistema medioambiental con agente inteligente.</div>
+          </div>
+
+          <div class="hackathon-badge">
+            <div class="hack-icon">🏆</div>
+            <div class="hack-info">
+              <div class="hack-title">3 Hackatones Nacionales Swift</div>
+              <div class="hack-sub">Apple Developer Program — México</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /about-grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EXPERIENCE — Experiencia laboral
+     ============================================================ -->
+<section id="experience" class="alt-bg">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Trayectoria</span>
+      <h2 class="section-title">Experiencia <span>profesional</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Ítem 1 — Maestría / Tesis (actual) -->
+      <div class="timeline-item right fade-up">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="timeline-card current">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            2025 — Presente
+          </div>
+          <div class="timeline-role">
+            Maestrante & Desarrollador de Tesis
+            <span class="current-badge">Activo</span>
+          </div>
+          <div class="timeline-company">
+            <i class="ph ph-buildings timeline-company-icon"></i>
+            CUValles — Universidad de Guadalajara
+          </div>
+          <p class="timeline-desc">
+            Desarrollo de tesis titulada <em>"Sistema para el Monitoreo Medioambiental y Edafológico
+            con integración de un agente inteligente para la interpretación de datos"</em>.
+            Investigación activa, diseño de arquitectura IoT y modelos de IA para análisis de suelos.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">IoT</span>
+            <span class="tag">Python</span>
+            <span class="tag">IA / ML</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Investigación</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ítem 2 — Becario Full Stack Investigación -->
+      <div class="timeline-item left fade-up delay-1">
+        <div class="timeline-card">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            2 años
+          </div>
+          <div class="timeline-role">Becario Desarrollador Full Stack</div>
+          <div class="timeline-company" style="justify-content:flex-end;">
+            <i class="ph ph-flask timeline-company-icon"></i>
+            Programa de Apoyo al Investigador — CUValles
+          </div>
+          <p class="timeline-desc">
+            Desarrollo de sistemas completos (frontend + backend) para proyectos de investigación
+            del centro. Integración de APIs, bases de datos relacionales y autenticación con JWT/Sanctum.
+          </p>
+          <div class="timeline-tags" style="justify-content:flex-end;">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">JWT</span>
+            <span class="tag">REST API</span>
+          </div>
+        </div>
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+      </div>
+
+      <!-- Ítem 3 — Becario Junior CTA -->
+      <div class="timeline-item right fade-up delay-2">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            3 años
+          </div>
+          <div class="timeline-role">Becario Desarrollador Junior</div>
+          <div class="timeline-company">
+            <i class="ph ph-monitor timeline-company-icon"></i>
+            Centro de Tecnologías para el Aprendizaje — CUValles
+          </div>
+          <p class="timeline-desc">
+            Desarrollo y mantenimiento de herramientas web institucionales para la Universidad
+            de Guadalajara. Participación en proyectos como el Help Desk de soporte técnico,
+            sistema de prácticas profesionales y sistema de eventos del campus.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Laravel 8</span>
+            <span class="tag">Vue</span>
+            <span class="tag">PHP</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ítem 4 — CReCE Incubadora -->
+      <div class="timeline-item left fade-up delay-3">
+        <div class="timeline-card">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            1 año
+          </div>
+          <div class="timeline-role">Encargado de Incubación de Negocios</div>
+          <div class="timeline-company" style="justify-content:flex-end;">
+            <i class="ph ph-rocket-launch timeline-company-icon"></i>
+            CReCE — Centro Regional para la Calidad Empresarial
+          </div>
+          <p class="timeline-desc">
+            Gestión del departamento de incubación de negocios en CUValles. Asesoría a emprendedores,
+            evaluación de modelos de negocio y coordinación de programas de apoyo empresarial.
+          </p>
+          <div class="timeline-tags" style="justify-content:flex-end;">
+            <span class="tag">Emprendimiento</span>
+            <span class="tag">Modelos de negocio</span>
+            <span class="tag">Liderazgo</span>
+            <span class="tag">Gestión</span>
+          </div>
+        </div>
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+      </div>
+
+      <!-- Ítem 5 — Arca Continental -->
+      <div class="timeline-item right fade-up delay-4">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-period">
+            <span class="period-dot"></span>
+            3 años
+          </div>
+          <div class="timeline-role">Checador / Almacenista</div>
+          <div class="timeline-company">
+            <i class="ph ph-factory timeline-company-icon"></i>
+            Arca Continental CEDIS Ameca
+          </div>
+          <p class="timeline-desc">
+            Control y registro de inventarios, logística de distribución y gestión de almacén
+            en el centro de distribución de Arca Continental. Desarrollo de habilidades operativas
+            y disciplina laboral.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Logística</span>
+            <span class="tag">Inventarios</span>
+            <span class="tag">Control de almacén</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SKILLS — Habilidades
+     ============================================================ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Conocimientos</span>
+      <h2 class="section-title">Mis <span>habilidades</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="skills-layout">
+
+      <!-- Lenguajes de programación -->
+      <div class="skill-category fade-up">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">💻</div>
+          <div>
+            <div class="skill-category-title">Lenguajes de programación</div>
+            <div class="skill-category-sub">Siempre abierto a aprender nuevos</div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag"><span class="tag-dot"></span>PHP</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Python</span>
+          <span class="skill-tag"><span class="tag-dot"></span>JavaScript</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Swift</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Java</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Go</span>
+          <span class="skill-tag"><span class="tag-dot"></span>C</span>
+          <span class="skill-tag"><span class="tag-dot"></span>C++</span>
+        </div>
+      </div>
+
+      <!-- Frameworks y librerías -->
+      <div class="skill-category fade-up delay-1">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">🧩</div>
+          <div>
+            <div class="skill-category-title">Frameworks & Librerías</div>
+            <div class="skill-category-sub">Web, móvil y backend</div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag"><span class="tag-dot"></span>Laravel</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Vue.js</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Quasar</span>
+          <span class="skill-tag"><span class="tag-dot"></span>SwiftUI</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Cordova</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Laravel Sanctum</span>
+          <span class="skill-tag"><span class="tag-dot"></span>JWT</span>
+        </div>
+      </div>
+
+      <!-- Herramientas y DevOps -->
+      <div class="skill-category fade-up delay-2">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">🛠️</div>
+          <div>
+            <div class="skill-category-title">Herramientas & DevOps</div>
+            <div class="skill-category-sub">Desarrollo y despliegue</div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag"><span class="tag-dot"></span>Git</span>
+          <span class="skill-tag"><span class="tag-dot"></span>GitHub</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Docker</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Linux (servidor)</span>
+          <span class="skill-tag"><span class="tag-dot"></span>MySQL</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Postman</span>
+          <span class="skill-tag"><span class="tag-dot"></span>Bruno</span>
+          <span class="skill-tag"><span class="tag-dot"></span>JWT</span>
+          <span class="skill-tag"><span class="tag-dot"></span>REST API</span>
+        </div>
+      </div>
+
+      <!-- Habilidades de negocio y liderazgo -->
+      <div class="skill-category fade-up delay-3">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">📊</div>
+          <div>
+            <div class="skill-category-title">Administración & Liderazgo</div>
+            <div class="skill-category-sub">Formación en gestión empresarial</div>
+          </div>
+        </div>
+        <div class="business-skills">
+          <div class="business-skill-item">
+            <div class="business-icon">💰</div>
+            <div class="business-name">Contabilidad básica</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">📋</div>
+            <div class="business-name">Planeación estratégica</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">🗺️</div>
+            <div class="business-name">Modelo de negocios</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">📈</div>
+            <div class="business-name">Finanzas</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">👥</div>
+            <div class="business-name">Liderazgo de equipo</div>
+          </div>
+          <div class="business-skill-item">
+            <div class="business-icon">🚀</div>
+            <div class="business-name">Emprendimiento</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idiomas — ancho completo -->
+      <div class="skill-category full-width fade-up">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">🌐</div>
+          <div>
+            <div class="skill-category-title">Idiomas</div>
+          </div>
+        </div>
+        <div class="languages-list">
+          <div class="language-item">
+            <span class="language-flag">🇲🇽</span>
+            <div class="language-info">
+              <div class="language-name">Español</div>
+              <div class="language-level">Nativo</div>
+            </div>
+            <div class="language-dots">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+            </div>
+          </div>
+          <div class="language-item">
+            <span class="language-flag">🇺🇸</span>
+            <div class="language-info">
+              <div class="language-name">Inglés Técnico</div>
+              <div class="language-level">Lectura y escritura avanzado · Habla básico</div>
+            </div>
+            <div class="language-dots">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /skills-layout -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROJECTS — Proyectos
+     ============================================================ -->
+<section id="projects" class="alt-bg">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Portafolio</span>
+      <h2 class="section-title">Mis <span>proyectos</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="projects-filter fade-up">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="universidad">Universidad</button>
+      <button class="filter-btn" data-filter="externo">Externos</button>
+      <button class="filter-btn" data-filter="herramienta">Herramientas</button>
+      <button class="filter-btn" data-filter="investigacion">Investigación</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="projects-grid">
+
+      <!-- Proyecto 1: SISPA Móvil -->
+      <article class="project-card" data-category="universidad">
+        <div class="project-card-banner bg-purple">
+          <span class="banner-icon">📱</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Universidad · PWA / Móvil</div>
+          <h3 class="project-title">SISPA Móvil</h3>
+          <p class="project-desc">
+            App PWA para que estudiantes de la carrera de Electrónica y Computación en CUValles
+            soliciten documentos y peticiones al coordinador de carrera, con integración al
+            sistema SIIAU de la Red UDG para login.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Quasar</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">Laravel 8</span>
+            <span class="tag">Cordova</span>
+            <span class="tag">SIIAU API</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">PWA</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 2: Help Desk -->
+      <article class="project-card" data-category="universidad">
+        <div class="project-card-banner bg-indigo">
+          <span class="banner-icon">🖥️</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Universidad · Web App</div>
+          <h3 class="project-title">Help Desk Soporte Técnico</h3>
+          <p class="project-desc">
+            Sistema de gestión de reportes de fallas en dispositivos y redes para el área de
+            soporte técnico de CUValles. Protección de rutas con JWT y embebido de Vue 3 en Laravel.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel 8</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">JWT</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">Web</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 3: SmartAccess -->
+      <article class="project-card" data-category="externo">
+        <div class="project-card-banner bg-teal">
+          <span class="banner-icon">🔑</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Externo · IoT</div>
+          <h3 class="project-title">SmartAccess — CETIS 63</h3>
+          <p class="project-desc">
+            Sistema de registro de entradas y salidas para el CETIS 63 de Ameca mediante tarjetas
+            RFID. Notificaciones en tiempo real vía <strong>Telegram</strong> para que padres de familia
+            reciban alertas al momento.
+          </p>
+          <div class="project-stack">
+            <span class="tag">RFID</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Telegram Bot API</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">IoT</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 4: Agenda Dental -->
+      <article class="project-card" data-category="externo">
+        <div class="project-card-banner bg-rose">
+          <span class="banner-icon">🦷</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Externo · Web App</div>
+          <h3 class="project-title">Sistema de Agenda Dental</h3>
+          <p class="project-desc">
+            Sistema de gestión de citas para consultorio dental. Control de pacientes, calendario
+            de citas, recordatorios y historial de atención. Diseñado para un consultorio privado.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">REST API</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">SaaS</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 5: Reportes Gobierno Ameca -->
+      <article class="project-card" data-category="externo">
+        <div class="project-card-banner bg-amber">
+          <span class="banner-icon">🏛️</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Gobierno · Web App</div>
+          <h3 class="project-title">Sistema de Reportes — Servicios Públicos</h3>
+          <p class="project-desc">
+            Sistema de reportes para el área de Servicios Públicos del <strong>Gobierno de Ameca</strong>.
+            Permite registrar, dar seguimiento y resolver incidencias ciudadanas de manera digital.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Bootstrap</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">Gobierno</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 6: Generador Laravel (Python Scripts) -->
+      <article class="project-card" data-category="herramienta">
+        <div class="project-card-banner bg-gold">
+          <span class="banner-icon">⚡</span>
+          <span class="project-status status-done">Completado</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Herramienta · Open Source</div>
+          <h3 class="project-title">Generador de Backend Laravel</h3>
+          <p class="project-desc">
+            Script Python que genera un backend Laravel completo en Docker a partir de un modelo
+            relacional <code>.mwb</code>. Crea migraciones, seeders, modelos, controladores, servicios
+            y rutas protegidas con <strong>Laravel Sanctum</strong>, además de un Bash para despliegue
+            automático.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Python</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Laravel Sanctum</span>
+            <span class="tag">Bash</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo no disponible">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">DevTool</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 7: Gestión Proyectos Investigación (en curso) -->
+      <article class="project-card" data-category="universidad investigacion">
+        <div class="project-card-banner bg-gradient">
+          <span class="banner-icon">📂</span>
+          <span class="project-status status-progress">En desarrollo</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Universidad · Web App</div>
+          <h3 class="project-title">Sistema de Gestión de Proyectos de Investigación</h3>
+          <p class="project-desc">
+            Plataforma web para la gestión, seguimiento y evaluación de proyectos de investigación
+            en CUValles. Actualmente en desarrollo activo.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">En Desarrollo</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo en progreso">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">🚧 WIP</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 8: Reporte Vertederos -->
+      <article class="project-card" data-category="universidad externo">
+        <div class="project-card-banner bg-teal">
+          <span class="banner-icon">♻️</span>
+          <span class="project-status status-progress">En desarrollo</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Universidad / Gobierno · Web App</div>
+          <h3 class="project-title">Reporte de Vertederos Clandestinos</h3>
+          <p class="project-desc">
+            Sistema ciudadano para reportar vertederos de residuos clandestinos en la Región Valles.
+            Georeferenciación de reportes y seguimiento por autoridades.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue</span>
+            <span class="tag">Geolocalización</span>
+            <span class="tag">En Desarrollo</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo en progreso">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">🚧 WIP</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 9: Tesis — Sistema Medioambiental -->
+      <article class="project-card" data-category="investigacion">
+        <div class="project-card-banner bg-gradient">
+          <span class="banner-icon">🌱</span>
+          <span class="project-status status-thesis">Tesis</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Investigación · IoT + IA</div>
+          <h3 class="project-title">Sistema de Monitoreo Medioambiental y Edafológico</h3>
+          <p class="project-desc">
+            Tesis de maestría: sistema para el monitoreo de suelos y variables medioambientales
+            con integración de un <strong>agente inteligente</strong> para la interpretación y
+            análisis de datos en tiempo real.
+          </p>
+          <div class="project-stack">
+            <span class="tag">IoT</span>
+            <span class="tag">Python</span>
+            <span class="tag">IA / ML</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Sensores</span>
+            <span class="tag">Vue 3</span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-links">
+            <a href="https://github.com/Minato97" target="_blank" class="project-link" aria-label="Ver en GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="#" class="project-link disabled" aria-label="Demo en progreso">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <span class="tag">Tesis 2027</span>
+        </div>
+      </article>
+
+    </div><!-- /projects-grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EDUCATION — Formación académica
+     ============================================================ -->
+<section id="education">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Formación</span>
+      <h2 class="section-title">Mi <span>educación</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="edu-grid">
+
+      <!-- Técnico en Contabilidad -->
+      <div class="edu-card">
+        <div class="edu-icon-wrap">🏫</div>
+        <div class="edu-info">
+          <div class="edu-period">
+            2013 — 2015
+            <span class="edu-badge graduated">Egresado</span>
+          </div>
+          <div class="edu-degree">Técnico en Contabilidad</div>
+          <div class="edu-specialty">Especialidad en Contabilidad General</div>
+          <div class="edu-institution">
+            <i class="ph ph-building"></i>
+            CETIS 63 — Ameca, Jalisco
+          </div>
+        </div>
+      </div>
+
+      <!-- Licenciatura Administración -->
+      <div class="edu-card">
+        <div class="edu-icon-wrap">📊</div>
+        <div class="edu-info">
+          <div class="edu-period">
+            2015 — 2019
+            <span class="edu-badge graduated">Egresado</span>
+          </div>
+          <div class="edu-degree">Licenciado en Administración</div>
+          <div class="edu-specialty">Especialidad en Emprendimiento</div>
+          <div class="edu-institution">
+            <i class="ph ph-buildings"></i>
+            CUValles — Universidad de Guadalajara
+          </div>
+        </div>
+      </div>
+
+      <!-- Ingeniería -->
+      <div class="edu-card">
+        <div class="edu-icon-wrap">⚡</div>
+        <div class="edu-info">
+          <div class="edu-period">
+            2019 — 2025
+            <span class="edu-badge graduated">Egresado</span>
+          </div>
+          <div class="edu-degree">Ingeniero en Electrónica y Computación</div>
+          <div class="edu-specialty">Énfasis en Computación y Sistemas Embebidos</div>
+          <div class="edu-institution">
+            <i class="ph ph-buildings"></i>
+            CUValles — Universidad de Guadalajara
+          </div>
+        </div>
+      </div>
+
+      <!-- Maestría -->
+      <div class="edu-card current">
+        <div class="edu-icon-wrap">🎓</div>
+        <div class="edu-info">
+          <div class="edu-period">
+            2025 — 2027
+            <span class="edu-badge in-progress">En curso</span>
+          </div>
+          <div class="edu-degree">Maestría en Ingeniería de Software</div>
+          <div class="edu-specialty">2do semestre · Tesis en desarrollo</div>
+          <div class="edu-institution">
+            <i class="ph ph-buildings"></i>
+            CUValles — Universidad de Guadalajara
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /edu-grid -->
+
+    <!-- Hackatones -->
+    <div class="hackathons-section fade-up">
+      <h3 class="hackathons-title">🏆 Participaciones en <span style="background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Hackatones Swift</span></h3>
+      <div class="hackathons-grid">
+        <div class="hackathon-card">
+          <div class="hack-number">01</div>
+          <div class="hack-title-card">Hackatón Nacional Swift</div>
+          <div class="hack-subtitle">Apple Developer Program · México</div>
+        </div>
+        <div class="hackathon-card">
+          <div class="hack-number">02</div>
+          <div class="hack-title-card">Hackatón Nacional Swift</div>
+          <div class="hack-subtitle">Apple Developer Program · México</div>
+        </div>
+        <div class="hackathon-card">
+          <div class="hack-number">03</div>
+          <div class="hack-title-card">Hackatón Nacional Swift</div>
+          <div class="hack-subtitle">Apple Developer Program · México</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SOFTWAVES — Mi empresa
+     ============================================================ -->
+<section id="softwaves" class="alt-bg">
+  <div class="container">
+    <div class="sw-layout">
+
+      <!-- Contenido -->
+      <div class="sw-content fade-left">
+        <div class="sw-eyebrow">
+          <i class="ph ph-rocket-launch"></i>
+          Próximo proyecto
+        </div>
+
+        <h2 class="sw-title">
+          Presentando<br>
+          <span class="sw-brand">SoftWaves</span>
+        </h2>
+
+        <p class="sw-description">
+          <strong>SoftWaves</strong> es mi empresa en formación: un proyecto que nace de la fusión
+          de todos mis conocimientos en tecnología, administración e investigación. La visión es
+          crear soluciones de software de alto impacto para empresas, instituciones educativas y
+          gobiernos, combinando desarrollo ágil con inteligencia artificial.
+        </p>
+
+        <div class="sw-pillars">
+          <div class="sw-pillar">
+            <div class="sw-pillar-icon">🌊</div>
+            <div class="sw-pillar-text">
+              <div class="pillar-title">Desarrollo Web & Móvil</div>
+              <div class="pillar-desc">Soluciones modernas, escalables y bien diseñadas.</div>
+            </div>
+          </div>
+          <div class="sw-pillar">
+            <div class="sw-pillar-icon">🤖</div>
+            <div class="sw-pillar-text">
+              <div class="pillar-title">Inteligencia Artificial</div>
+              <div class="pillar-desc">Integración de agentes y modelos para análisis de datos.</div>
+            </div>
+          </div>
+          <div class="sw-pillar">
+            <div class="sw-pillar-icon">🏢</div>
+            <div class="sw-pillar-text">
+              <div class="pillar-title">Consultoría Tech</div>
+              <div class="pillar-desc">Acompañamiento estratégico en transformación digital.</div>
+            </div>
+          </div>
+          <div class="sw-pillar">
+            <div class="sw-pillar-icon">🔬</div>
+            <div class="sw-pillar-text">
+              <div class="pillar-title">I+D</div>
+              <div class="pillar-desc">Investigación aplicada en IoT y monitoreo ambiental.</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary">
+          <i class="ph ph-handshake"></i> Hablemos de tu proyecto
+        </a>
+      </div>
+
+      <!-- Visual con logo -->
+      <div class="sw-visual fade-right">
+        <div class="sw-card">
+          <div class="sw-logo-wrap">
+            <!-- Logo con colores (modo oscuro) -->
+            <img src="assets/logos/softwaves-color.png"
+                 alt="SoftWaves Logo"
+                 class="sw-logo sw-logo-dark" />
+            <!-- Logo oscuro (modo claro) -->
+            <img src="assets/logos/softwaves-color.png"
+                 alt="SoftWaves Logo"
+                 class="sw-logo sw-logo-light" />
+          </div>
+          <div class="sw-card-title">SoftWaves</div>
+          <div class="sw-card-tagline">"Donde la tecnología cobra vida"</div>
+
+          <div class="sw-stats">
+            <div class="sw-stat">
+              <div class="sw-stat-num">5+</div>
+              <div class="sw-stat-label">Años de experiencia</div>
+            </div>
+            <div class="sw-stat">
+              <div class="sw-stat-num">10+</div>
+              <div class="sw-stat-label">Proyectos</div>
+            </div>
+            <div class="sw-stat">
+              <div class="sw-stat-num">3</div>
+              <div class="sw-stat-label">Formaciones</div>
+            </div>
+          </div>
+
+          <div class="sw-coming-soon">
+            <span class="sw-chip">🚀 Próximamente</span>
+            <span class="sw-chip">💼 Open to work</span>
+            <span class="sw-chip">🌐 softwaves.mx</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT — Contacto
+     ============================================================ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Hablemos</span>
+      <h2 class="section-title">¿Tienes un <span>proyecto</span>?</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Info de contacto -->
+      <div class="contact-info fade-left">
+        <p class="contact-intro">
+          Estoy disponible para proyectos freelance, colaboraciones, investigación o simplemente
+          para platicar de tecnología y emprendimiento. ¡Escríbeme!
+        </p>
+
+        <div class="contact-methods">
+          <a href="mailto:andrade.ignacio97@gmail.com" class="contact-method">
+            <div class="contact-method-icon"><i class="ph ph-envelope-simple"></i></div>
+            <div class="contact-method-info">
+              <div class="contact-method-label">Email</div>
+              <div class="contact-method-value">andrade.ignacio97@gmail.com</div>
+            </div>
+            <i class="ph ph-arrow-right contact-method-arrow"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" class="contact-method">
+            <div class="contact-method-icon"><i class="ph ph-linkedin-logo"></i></div>
+            <div class="contact-method-info">
+              <div class="contact-method-label">LinkedIn</div>
+              <div class="contact-method-value">Ignacio Andrade Salazar</div>
+            </div>
+            <i class="ph ph-arrow-right contact-method-arrow"></i>
+          </a>
+
+          <a href="https://github.com/Minato97" target="_blank" class="contact-method">
+            <div class="contact-method-icon"><i class="ph ph-github-logo"></i></div>
+            <div class="contact-method-info">
+              <div class="contact-method-label">GitHub</div>
+              <div class="contact-method-value">github.com/Minato97</div>
+            </div>
+            <i class="ph ph-arrow-right contact-method-arrow"></i>
+          </a>
+
+          <div class="contact-method" style="cursor:default;">
+            <div class="contact-method-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="contact-method-info">
+              <div class="contact-method-label">Ubicación</div>
+              <div class="contact-method-value">Ameca, Jalisco · México</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="contact-social-title">Sígueme en</p>
+        <div class="contact-social-links">
+          <a href="https://github.com/Minato97" target="_blank" class="contact-social-link" aria-label="GitHub">
+            <i class="ph ph-github-logo"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" class="contact-social-link" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+          </a>
+          <a href="https://www.instagram.com/nacho_as97/" target="_blank" class="contact-social-link" aria-label="Instagram">
+            <i class="ph ph-instagram-logo"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="contact-form-wrap fade-right">
+        <h3 class="form-title">Envíame un mensaje</h3>
+
+        <form id="contact-form" class="contact-form" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label>Nombre *</label>
-              <input type="text" name="nombre" placeholder="Tu nombre" required />
+              <label class="form-label" for="name">Nombre <span>*</span></label>
+              <input type="text" id="name" name="name" class="form-input"
+                     placeholder="Tu nombre" required autocomplete="name" />
             </div>
             <div class="form-group">
-              <label>Empresa</label>
-              <input type="text" name="empresa" placeholder="Nombre de tu empresa" />
+              <label class="form-label" for="email">Email <span>*</span></label>
+              <input type="email" id="email" name="email" class="form-input"
+                     placeholder="tu@email.com" required autocomplete="email" />
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Correo electrónico *</label>
-              <input type="email" name="correo" placeholder="correo@empresa.com" required />
-            </div>
-            <div class="form-group">
-              <label>Teléfono / WhatsApp</label>
-              <input type="tel" name="telefono" placeholder="+52 333 000 0000" />
-            </div>
-          </div>
+
           <div class="form-group">
-            <label>Servicio de interés *</label>
-            <select name="servicio" required>
-              <option value="" disabled selected>Selecciona un servicio</option>
-              <option>Desarrollo a la Medida (Proyecto Cerrado)</option>
-              <option>Software como Servicio (Mensualidad)</option>
-              <option>Consultoría Tecnológica (Por Hora)</option>
-              <option>Automatización con Inteligencia Artificial</option>
-              <option>Aún no lo sé · Quiero asesoría</option>
-            </select>
+            <label class="form-label" for="subject">Asunto <span>*</span></label>
+            <input type="text" id="subject" name="subject" class="form-input"
+                   placeholder="¿De qué quieres hablar?" required />
           </div>
+
           <div class="form-group">
-            <label>Cuéntanos sobre tu proyecto *</label>
-            <textarea name="mensaje" placeholder="¿Qué problema quieres resolver? ¿Qué tipo de sistema necesitas? ¿Cuál es tu presupuesto aproximado?" required></textarea>
+            <label class="form-label" for="message">Mensaje <span>*</span></label>
+            <textarea id="message" name="message" class="form-textarea"
+                      placeholder="Cuéntame sobre tu proyecto o idea..." required></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="width:100%">Enviar solicitud</button>
-          <div class="form-success" id="formSuccess">✅ ¡Mensaje enviado! Te contactaremos en menos de 24 horas.</div>
+
+          <div class="form-submit">
+            <p class="form-note">Respondo en menos de 24 horas, generalmente mucho antes 😊</p>
+            <button type="submit" class="btn btn-primary form-submit-btn">
+              <i class="ph ph-paper-plane-tilt"></i>
+              <span>Enviar mensaje</span>
+            </button>
+          </div>
         </form>
       </div>
-    </div>
+
+    </div><!-- /contact-layout -->
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
-<footer>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-inner">
+
+      <!-- Marca -->
       <div class="footer-brand">
-        <a href="#inicio" class="nav-logo">
-          <img src="assets/logo-color-icon.png" alt="SoftWaves" style="height:30px" onerror="this.style.display='none'" />
-          <span class="nav-logo-text">SoftWaves</span>
+        <a href="#hero" class="footer-logo">
+          <div class="footer-logo-badge">IA</div>
+          <span class="footer-logo-name">Ignacio Andrade</span>
         </a>
-        <p>Soluciones Digitales Inteligentes para PyMEs mexicanas. Arquitectura de microservicios para entregas más rápidas y económicas.</p>
+        <p class="footer-tagline">
+          Ingeniero, desarrollador y emprendedor. Construyendo tecnología que hace la diferencia
+          desde Ameca, Jalisco.
+        </p>
+        <div class="footer-social">
+          <a href="https://github.com/Minato97" target="_blank" class="footer-social-link" aria-label="GitHub">
+            <i class="ph ph-github-logo"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank" class="footer-social-link" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+          </a>
+          <a href="https://www.instagram.com/nacho_as97/" target="_blank" class="footer-social-link" aria-label="Instagram">
+            <i class="ph ph-instagram-logo"></i>
+          </a>
+          <a href="mailto:andrade.ignacio97@gmail.com" class="footer-social-link" aria-label="Email">
+            <i class="ph ph-envelope-simple"></i>
+          </a>
+        </div>
       </div>
+
+      <!-- Nav -->
       <div class="footer-col">
-        <h5>Empresa</h5>
-        <ul>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#equipo">Equipo</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
+        <div class="footer-col-title">Navegación</div>
+        <ul class="footer-links">
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#experience">Experiencia</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#education">Formación</a></li>
         </ul>
       </div>
+
+      <!-- Más -->
       <div class="footer-col">
-        <h5>Servicios</h5>
-        <ul>
-          <li><a href="#servicios">Desarrollo a la Medida</a></li>
-          <li><a href="#servicios">Software SaaS</a></li>
-          <li><a href="#servicios">Consultoría</a></li>
-          <li><a href="#servicios">IA & Automatización</a></li>
+        <div class="footer-col-title">Más</div>
+        <ul class="footer-links">
+          <li><a href="#softwaves">SoftWaves</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li><a href="https://github.com/Minato97" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/ignacio-andrade-salazar-9397b6409/" target="_blank">LinkedIn</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h5>Contacto</h5>
-        <ul>
-          <li><a href="mailto:softwaves.contacto@gmail.com">softwaves.contacto@gmail.com</a></li>
-          <li><a href="#contacto">Solicitar información</a></li>
-          <li><a href="#contacto">Diagnóstico gratuito</a></li>
-        </ul>
-      </div>
-    </div>
+
+    </div><!-- /footer-inner -->
+
     <div class="footer-bottom">
-      <p>© 2025 SoftWaves · Ameca, Jalisco, México · Todos los derechos reservados</p>
-      <div class="social-links">
-        <a href="#" class="social-link" title="LinkedIn">in</a>
-        <a href="#" class="social-link" title="Instagram">ig</a>
-        <a href="#" class="social-link" title="Facebook">fb</a>
-      </div>
+      <p class="footer-copyright">
+        © 2025 <span>Ignacio Andrade Salazar</span>. Todos los derechos reservados.
+      </p>
+      <p class="footer-made-with">
+        Hecho con <span class="heart">♥</span> y mucho café en Ameca, Jalisco
+      </p>
     </div>
+
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════
+<!-- Botón volver arriba -->
+<button id="back-to-top" aria-label="Volver al inicio">
+  <i class="ph ph-arrow-up"></i>
+</button>
+
+
+<!-- ============================================================
      SCRIPTS
-══════════════════════════════════════════ -->
-<script>
-/* ── Theme ── */
-const html = document.documentElement;
-const themeBtn = document.getElementById('themeToggle');
+     ============================================================ -->
+<script src="js/navbar.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/projects.js"></script>
 
-function applyTheme(t) {
-  html.setAttribute('data-theme', t);
-  themeBtn.textContent = t === 'dark' ? '🌙' : '☀️';
-  localStorage.setItem('sw-theme', t);
-  // update Chart.js defaults
-  const muted = t === 'dark' ? '#9B9BB8' : '#5B5B78';
-  const border = t === 'dark' ? 'rgba(107,33,168,0.15)' : 'rgba(107,33,168,0.1)';
-  if (window.Chart) { Chart.defaults.color = muted; Chart.defaults.borderColor = border; }
-}
-
-function toggleTheme() {
-  applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-}
-
-// init from storage
-const saved = localStorage.getItem('sw-theme') || 'dark';
-applyTheme(saved);
-
-/* ── Mobile menu ── */
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-
-/* ── Contact form ── */
-function submitForm(e) {
-  e.preventDefault();
-  const fd = new FormData(e.target);
-  const get = k => fd.get(k) || '';
-  const subject = encodeURIComponent(`SoftWaves — Solicitud de ${get('nombre')} (${get('empresa') || 'sin empresa'})`);
-  const body = encodeURIComponent(
-    `Nombre: ${get('nombre')}\nEmpresa: ${get('empresa') || 'No especificada'}\nCorreo: ${get('correo')}\nTeléfono: ${get('telefono') || 'No proporcionado'}\n\nServicio de interés: ${get('servicio')}\n\nMensaje:\n${get('mensaje')}`
-  );
-  window.location.href = `mailto:softwaves.contacto@gmail.com?subject=${subject}&body=${body}`;
-  document.getElementById('formSuccess').style.display = 'block';
-  e.target.reset();
-}
-
-/* ── Scroll animations (Intersection Observer — repeatable) ── */
-const HERO_REVEALS = new Set(document.querySelectorAll('.hero .reveal, .hero .stagger > *'));
-
-// Fires every time element enters/leaves viewport
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (HERO_REVEALS.has(e.target)) return; // hero handled separately
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    } else {
-      // reset so it animates again on next entry
-      e.target.classList.remove('visible');
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
-
-const staggerObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (HERO_REVEALS.has(e.target)) return;
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    } else {
-      e.target.classList.remove('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -24px 0px' });
-
-function initReveal() {
-  document.querySelectorAll('.reveal').forEach(el => {
-    if (!HERO_REVEALS.has(el)) observer.observe(el);
-  });
-  document.querySelectorAll('.stagger').forEach(group => {
-    Array.from(group.children).forEach((child, i) => {
-      child.style.transitionDelay = `${i * 0.1}s`;
-      if (!HERO_REVEALS.has(child)) staggerObs.observe(child);
-    });
-  });
-}
-
-// Hero fires once on load (always in view at start)
-document.querySelectorAll('.hero .reveal').forEach((el, i) => {
-  const base = parseFloat(el.style.transitionDelay) || i * 0.12;
-  setTimeout(() => el.classList.add('visible'), base * 1000 + 80);
-});
-
-// Re-trigger hero animations when nav links click back to #inicio
-document.querySelectorAll('a[href="#inicio"]').forEach(a => {
-  a.addEventListener('click', () => {
-    HERO_REVEALS.forEach(el => el.classList.remove('visible'));
-    document.querySelectorAll('.hero .reveal').forEach((el, i) => {
-      const base = parseFloat(el.style.transitionDelay) || i * 0.12;
-      setTimeout(() => el.classList.add('visible'), base * 1000 + 120);
-    });
-  });
-});
-
-initReveal();
-
-/* ── Active nav ── */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
-}, { passive: true });
-
-/* ── Charts ── */
-Chart.defaults.font.family = 'Inter';
-
-function purple(a = 1) { return `rgba(127,0,178,${a})`; }
-function mid(a = 1)    { return `rgba(145,32,189,${a})`; }
-function blue(a = 1)   { return `rgba(1,75,160,${a})`; }
-function blueMid(a=1)  { return `rgba(20,102,195,${a})`; }
-function yellow(a = 1) { return `rgba(232,232,0,${a})`; }
-
-// Registry: id → { config, instance }
-const chartRegistry = {};
-
-function makeChart(id, config) {
-  const instance = new Chart(document.getElementById(id), config);
-  chartRegistry[id] = { config, instance };
-}
-
-// Observer: cada vez que el canvas entra al viewport re-anima
-const chartObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    const rec = chartRegistry[e.target.id];
-    if (!rec) return;
-    if (e.isIntersecting) {
-      rec.instance.reset();   // regresa a 0
-      rec.instance.update();  // vuelve a animar
-    }
-  });
-}, { threshold: 0.25 });
-
-function registerChartAnim(id) {
-  const canvas = document.getElementById(id);
-  if (canvas) chartObs.observe(canvas);
-}
-
-// ── Sector donut ──
-makeChart('chartSector', {
-  type: 'doughnut',
-  data: {
-    labels: ['Comercio & Retail','Servicios Profesionales','Salud','Manufactura','Educación','Otros'],
-    datasets: [{
-      data: [7, 5, 4, 3, 3, 2],
-      backgroundColor: ['#7f00b2','#014ba0','#9120bd','#1466c3','#cccc00','#bc4ed8'],
-      borderWidth: 2, borderColor: 'transparent', hoverOffset: 10
-    }]
-  },
-  options: {
-    responsive: true,
-    animation: { animateRotate: true, animateScale: true, duration: 900, easing: 'easeOutQuart' },
-    plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true, pointStyleWidth: 8 } } }
-  }
-});
-
-// ── Ingresos donut ──
-makeChart('chartIngresos', {
-  type: 'doughnut',
-  data: {
-    labels: ['Proyecto Cerrado','Software SaaS','Consultoría','IA & Automatización'],
-    datasets: [{
-      data: [45, 30, 15, 10],
-      backgroundColor: ['#7f00b2','#014ba0','#cccc00','#9120bd'],
-      borderWidth: 2, borderColor: 'transparent', hoverOffset: 10
-    }]
-  },
-  options: {
-    responsive: true,
-    animation: { animateRotate: true, animateScale: true, duration: 900, easing: 'easeOutQuart' },
-    plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true, pointStyleWidth: 8 } } }
-  }
-});
-
-// ── Proyección anual ──
-makeChart('chartProyeccion', {
-  type: 'bar',
-  data: {
-    labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
-    datasets: [
-      {
-        label: 'Ingresos',
-        data: [12000,16000,19500,32000,38000,46500,52000,58000,64000,70000,76000,79500],
-        backgroundColor: mid(0.75), borderRadius: 7, order: 2
-      },
-      {
-        label: 'Costos fijos',
-        data: [21000,21000,21000,21000,21000,21000,31800,31800,31800,31800,31800,31800],
-        type: 'line', borderColor: '#cccc00', backgroundColor: 'transparent',
-        borderWidth: 2.5, pointBackgroundColor: '#cccc00', pointRadius: 4, tension: 0.35, order: 1
-      }
-    ]
-  },
-  options: {
-    responsive: true,
-    animation: { duration: 1000, easing: 'easeOutCubic' },
-    scales: {
-      y: { ticks: { callback: v => '$' + (v/1000).toFixed(0) + 'k' }, grid: { color: purple(0.10) } },
-      x: { grid: { display: false } }
-    },
-    plugins: { legend: { labels: { usePointStyle: true } } }
-  }
-});
-
-// ── Clientes acumulados ──
-makeChart('chartClientes', {
-  type: 'line',
-  data: {
-    labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
-    datasets: [{
-      label: 'Clientes activos',
-      data: [1,2,3,4,6,7,9,11,13,15,17,18],
-      borderColor: '#9120bd', backgroundColor: blue(0.12),
-      fill: true, tension: 0.45,
-      pointBackgroundColor: '#9120bd', pointRadius: 5, pointHoverRadius: 7
-    }]
-  },
-  options: {
-    responsive: true,
-    animation: { duration: 1100, easing: 'easeOutCubic' },
-    scales: {
-      y: { beginAtZero: true, grid: { color: purple(0.10) }, ticks: { precision: 0 } },
-      x: { grid: { display: false } }
-    },
-    plugins: { legend: { display: false } }
-  }
-});
-
-// ── Tech stack ──
-makeChart('chartTech', {
-  type: 'bar',
-  indexAxis: 'y',
-  data: {
-    labels: ['NestJS','Vue / Quasar','PostgreSQL','Node.js','Docker','React','AWS','Flutter'],
-    datasets: [{
-      label: 'Proyectos',
-      data: [18,15,17,14,12,8,10,6],
-      backgroundColor: [
-        mid(0.90), blue(0.90), mid(0.75), blueMid(0.80),
-        purple(0.65), yellow(0.70), mid(0.50), blueMid(0.55)
-      ],
-      borderRadius: 7
-    }]
-  },
-  options: {
-    responsive: true,
-    animation: { duration: 1000, easing: 'easeOutCubic' },
-    scales: {
-      x: { beginAtZero: true, grid: { color: purple(0.10) } },
-      y: { grid: { display: false } }
-    },
-    plugins: { legend: { display: false } }
-  }
-});
-
-// Registrar todos los canvas para re-animación
-['chartSector','chartIngresos','chartProyeccion','chartClientes','chartTech']
-  .forEach(registerChartAnim);
-</script>
 </body>
 </html>
