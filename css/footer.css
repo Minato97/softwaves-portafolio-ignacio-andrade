@@ -15,9 +15,7 @@
   margin-bottom: var(--space-12);
 }
 
-/* --- Columna de marca --- */
-.footer-brand { }
-
+/* --- Marca --- */
 .footer-logo {
   display: flex;
   align-items: center;
@@ -30,7 +28,7 @@
   width: 42px;
   height: 42px;
   border-radius: var(--radius-md);
-  background: var(--gradient-short);
+  background: var(--gradient);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,10 +54,7 @@
   margin-bottom: var(--space-6);
 }
 
-.footer-social {
-  display: flex;
-  gap: var(--space-3);
-}
+.footer-social { display: flex; gap: var(--space-3); }
 
 .footer-social-link {
   display: flex;
@@ -75,16 +70,16 @@
   transition: all var(--transition-base);
 }
 
+/* Hover: amarillo (10%) */
 .footer-social-link:hover {
-  background: var(--gradient-short);
-  color: #fff;
-  border-color: transparent;
+  background: var(--yellow);
+  color: #030c1e;
+  border-color: var(--yellow);
   transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(255, 255, 0, 0.25);
 }
 
-/* --- Columnas de navegación --- */
-.footer-col { }
-
+/* --- Columnas de nav --- */
 .footer-col-title {
   font-size: var(--text-sm);
   font-weight: 700;
@@ -112,7 +107,7 @@
 }
 
 .footer-links a:hover {
-  color: var(--purple-light);
+  color: var(--blue-light);
   gap: var(--space-3);
 }
 
@@ -129,7 +124,7 @@
   transform: translateX(0);
 }
 
-/* --- Separador y copyright --- */
+/* --- Bottom / copyright --- */
 .footer-bottom {
   display: flex;
   align-items: center;
@@ -171,7 +166,7 @@
   50%       { transform: scale(1.2); }
 }
 
-/* --- Back to top --- */
+/* --- Back to top — amarillo (10%) --- */
 #back-to-top {
   position: fixed;
   bottom: var(--space-8);
@@ -179,36 +174,32 @@
   width: 46px;
   height: 46px;
   border-radius: var(--radius-full);
-  background: var(--gradient-short);
-  color: #fff;
+  background: var(--yellow);
+  color: #030c1e;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
-  box-shadow: 0 4px 20px rgba(123, 53, 178, 0.40);
+  box-shadow: 0 4px 20px rgba(255, 255, 0, 0.35);
   opacity: 0;
   transform: translateY(20px);
   transition: all var(--transition-base);
   z-index: 500;
 }
 
-#back-to-top.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+#back-to-top.visible { opacity: 1; transform: translateY(0); }
 
 #back-to-top:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(123, 53, 178, 0.55);
+  box-shadow: 0 8px 28px rgba(255, 255, 0, 0.50);
+  background: var(--yellow-muted);
 }
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  .footer-inner {
-    grid-template-columns: 1fr 1fr;
-  }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }
 

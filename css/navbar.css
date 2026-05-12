@@ -1,5 +1,6 @@
 /* ============================================================
    NAVBAR.CSS — Barra de navegación fija
+   60% azul en fondo, 30% morado en links activos, 10% amarillo en hover
    ============================================================ */
 
 #navbar {
@@ -45,7 +46,7 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-md);
-  background: var(--gradient-short);
+  background: var(--gradient);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,6 +89,7 @@
   transition: all var(--transition-base);
 }
 
+/* Línea inferior con amarillo (10%) */
 .navbar-links a::after {
   content: '';
   position: absolute;
@@ -96,7 +98,7 @@
   transform: translateX(-50%) scaleX(0);
   width: 60%;
   height: 2px;
-  background: var(--gradient-short);
+  background: var(--yellow);
   border-radius: var(--radius-full);
   transition: transform var(--transition-base);
 }
@@ -111,7 +113,7 @@
   transform: translateX(-50%) scaleX(1);
 }
 
-/* --- Controles derechos (tema + hamburger) --- */
+/* --- Controles derechos --- */
 .navbar-controls {
   display: flex;
   align-items: center;
@@ -138,7 +140,7 @@
 
 .theme-toggle:hover {
   border-color: var(--purple);
-  color: var(--purple);
+  color: var(--purple-light);
   transform: rotate(15deg);
 }
 
@@ -193,7 +195,7 @@
   inset: 0;
   z-index: 999;
   background: var(--overlay-bg);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
   padding: 100px var(--space-6) var(--space-6);
   flex-direction: column;
   align-items: center;
@@ -219,10 +221,7 @@
 }
 
 .mobile-menu a:hover {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--yellow);
 }
 
 /* --- Responsive --- */

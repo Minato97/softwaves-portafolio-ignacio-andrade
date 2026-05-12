@@ -1,0 +1,233 @@
+/* ============================================================
+   ANIMATIONS.CSS — Keyframes y clases de animación por sección
+   ============================================================ */
+
+/* ── Estado inicial de TODOS los animables ─────────────────── */
+.anim-fade-up,
+.anim-fade-down,
+.anim-slide-left,
+.anim-slide-right,
+.anim-zoom,
+.anim-pop,
+.anim-flip,
+.anim-rotate-in {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* ── Estados VISIBLE (activados por JS) ─────────────────────── */
+
+/* Fade + sube */
+.anim-fade-up {
+  transform: translateY(50px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Fade + baja */
+.anim-fade-down {
+  transform: translateY(-40px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-fade-down.visible { opacity: 1; transform: translateY(0); }
+
+/* Desliza desde la izquierda */
+.anim-slide-left {
+  transform: translateX(-70px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-slide-left.visible { opacity: 1; transform: translateX(0); }
+
+/* Desliza desde la derecha */
+.anim-slide-right {
+  transform: translateX(70px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-slide-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Zoom + fade */
+.anim-zoom {
+  transform: scale(0.88) translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-zoom.visible { opacity: 1; transform: scale(1) translateY(0); }
+
+/* Pop (con bounce) — para tags y badges */
+.anim-pop {
+  transform: scale(0.5) rotate(-8deg);
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.anim-pop.visible { opacity: 1; transform: scale(1) rotate(0deg); }
+
+/* Flip (perspectiva 3D) — para tarjetas de educación y hackathones */
+.anim-flip {
+  transform: perspective(600px) rotateX(25deg) translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-flip.visible { opacity: 1; transform: perspective(600px) rotateX(0deg) translateY(0); }
+
+/* Giro de entrada — para íconos y badges flotantes */
+.anim-rotate-in {
+  transform: rotate(-20deg) scale(0.7);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.anim-rotate-in.visible { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* ── Delays helper ─────────────────────────────────────────── */
+.anim-d1  { transition-delay: 0.08s !important; }
+.anim-d2  { transition-delay: 0.16s !important; }
+.anim-d3  { transition-delay: 0.24s !important; }
+.anim-d4  { transition-delay: 0.32s !important; }
+.anim-d5  { transition-delay: 0.40s !important; }
+.anim-d6  { transition-delay: 0.48s !important; }
+.anim-d7  { transition-delay: 0.56s !important; }
+.anim-d8  { transition-delay: 0.64s !important; }
+.anim-d9  { transition-delay: 0.72s !important; }
+.anim-d10 { transition-delay: 0.80s !important; }
+
+/* ── Línea del timeline ────────────────────────────────────── */
+#experience .timeline::before {
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top center;
+  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+#experience .timeline.line-visible::before {
+  transform: translateX(-50%) scaleY(1);
+}
+
+/* ── Divisor de sección ────────────────────────────────────── */
+.section-divider {
+  width: 0 !important;
+  transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.4s !important;
+}
+.section-divider.visible {
+  width: 60px !important;
+}
+
+/* ── Glow pulsante en section-label al entrar ──────────────── */
+@keyframes label-glow {
+  0%   { filter: brightness(1); }
+  50%  { filter: brightness(1.4) drop-shadow(0 0 8px rgba(255,255,0,0.5)); }
+  100% { filter: brightness(1); }
+}
+.section-label.glowing {
+  animation: label-glow 1.2s ease forwards;
+}
+
+/* ── Parallax mouse del hero ───────────────────────────────── */
+.hero-orb {
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+/* ── Entrada del dot de timeline ───────────────────────────── */
+.timeline-dot-inner {
+  transform: scale(0);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease;
+}
+.timeline-dot.dot-visible .timeline-dot-inner {
+  transform: scale(1);
+}
+
+/* ── Shimmer en cards al entrar ────────────────────────────── */
+@keyframes card-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.card-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: card-shimmer 0.8s ease forwards;
+  pointer-events: none;
+}
+
+/* ── Underline animado en navbar links ─────────────────────── */
+@keyframes underline-draw {
+  from { transform: translateX(-50%) scaleX(0); }
+  to   { transform: translateX(-50%) scaleX(1); }
+}
+
+/* ── Bounce de entrada del back-to-top ─────────────────────── */
+@keyframes bounce-in {
+  0%   { transform: translateY(30px) scale(0.8); opacity: 0; }
+  60%  { transform: translateY(-6px) scale(1.05); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+#back-to-top.visible {
+  animation: bounce-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Contadores: efecto flash al completar ─────────────────── */
+@keyframes counter-flash {
+  0%   { color: inherit; }
+  40%  { -webkit-text-fill-color: var(--yellow); filter: brightness(1.4); }
+  100% { color: inherit; filter: brightness(1); }
+}
+.counter-done {
+  animation: counter-flash 0.6s ease forwards;
+}
+
+/* ── Wave del hero: aparece suavemente ─────────────────────── */
+.hero-wave {
+  opacity: 0;
+  animation: fade-up-wave 1s ease 1.2s forwards;
+}
+@keyframes fade-up-wave {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scroll indicator ──────────────────────────────────────── */
+@keyframes fade-in-indicator {
+  to { opacity: 0.65; }
+}
+
+/* ── Ripple en botones al hacer click ──────────────────────── */
+.btn { position: relative; overflow: hidden; }
+.btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.30);
+  transform: scale(0);
+  animation: ripple-expand 0.6s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes ripple-expand {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ── Efecto de entrada en sección SoftWaves card ──────────── */
+@keyframes sw-card-enter {
+  0%   { opacity: 0; transform: translateX(60px) rotate(3deg); }
+  60%  { transform: translateX(-6px) rotate(-0.5deg); }
+  100% { opacity: 1; transform: translateX(0) rotate(0deg); }
+}
+.sw-card.card-animated {
+  animation: sw-card-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ── Particles flotantes decorativas ───────────────────────── */
+.section-particle {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-float 6s ease-in-out infinite;
+}
+@keyframes particle-float {
+  0%   { opacity: 0; transform: translateY(0) scale(0); }
+  20%  { opacity: 0.6; transform: translateY(-20px) scale(1); }
+  80%  { opacity: 0.3; transform: translateY(-60px) scale(0.8); }
+  100% { opacity: 0; transform: translateY(-90px) scale(0); }
+}

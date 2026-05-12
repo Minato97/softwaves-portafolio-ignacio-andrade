@@ -1,21 +1,34 @@
 /* ============================================================
-   VARIABLES.CSS — Design tokens, colores y modo claro/oscuro
+   VARIABLES.CSS — Paleta oficial SoftWaves
+   Regla 60-30-10:
+     60% → Azul   #014ba0  (fondos, superficies, áreas grandes)
+     30% → Morado #7f00b2  (headings, nav, tarjetas, bordes)
+     10% → Amarillo #ffff00 (CTAs, activos, highlights)
    ============================================================ */
 
 :root {
-  /* --- Paleta Softwaves --- */
-  --purple:        #7B35B2;
-  --purple-light:  #9B55D2;
-  --purple-dark:   #5A1F8A;
-  --gold:          #C4B430;
-  --gold-light:    #D4C448;
-  --gold-dark:     #A09420;
+  /* --- Paleta base --- */
+  --blue:          #014ba0;
+  --blue-light:    #1466c3;
+  --blue-lighter:  #5275c8;
+  --blue-dark:     #002c74;
+  --blue-darkest:  #001040;
 
-  /* --- Gradiente principal --- */
-  --gradient:          linear-gradient(135deg, #7B35B2 0%, #A0706A 50%, #C4B430 100%);
-  --gradient-short:    linear-gradient(135deg, #7B35B2, #C4B430);
-  --gradient-text:     linear-gradient(135deg, #9B55D2, #D4C448);
-  --gradient-border:   linear-gradient(135deg, #7B35B2, #C4B430);
+  --purple:        #7f00b2;
+  --purple-light:  #a21ad7;
+  --purple-lighter:#c050f0;
+  --purple-dark:   #530084;
+  --purple-darkest:#1b004b;
+
+  --yellow:        #ffff00;
+  --yellow-muted:  #e6d800;   /* suavizado para fondos claros */
+  --yellow-dark:   #b8ac00;   /* contraste en texto sobre amarillo */
+
+  /* --- Gradientes --- */
+  --gradient:        linear-gradient(135deg, #014ba0 0%, #7f00b2 100%);
+  --gradient-rev:    linear-gradient(135deg, #7f00b2 0%, #014ba0 100%);
+  --gradient-text:   linear-gradient(135deg, #1466c3, #a21ad7);
+  --gradient-yellow: linear-gradient(135deg, #014ba0, #ffff00);
 
   /* --- Tipografía --- */
   --font-main: 'Poppins', sans-serif;
@@ -54,67 +67,90 @@
   --radius-full: 9999px;
 
   /* --- Transiciones --- */
-  --transition-fast:   150ms ease;
-  --transition-base:   300ms ease;
-  --transition-slow:   500ms ease;
-
-  /* --- Sombras base --- */
-  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md:  0 4px 16px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
-  --shadow-lg:  0 10px 40px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-glow: 0 0 32px rgba(123, 53, 178, 0.3);
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
 }
 
-/* ===================== MODO CLARO (default) ===================== */
+/* ===================== MODO CLARO (default) =====================
+   60% → Azul muy claro en fondos
+   30% → Morado en elementos UI
+   10% → Amarillo en CTAs y activos
+   ============================================================== */
 [data-theme="light"] {
-  --bg-primary:    #F7F5FF;
-  --bg-secondary:  #EEEAF8;
-  --bg-card:       #FFFFFF;
-  --bg-card-hover: #F3F0FF;
-  --bg-navbar:     rgba(247, 245, 255, 0.85);
+  /* Fondos — 60% azul expresado en tonos suaves */
+  --bg-primary:    #f0f5ff;
+  --bg-secondary:  #e2ecff;
+  --bg-card:       #ffffff;
+  --bg-card-hover: #f5f8ff;
+  --bg-navbar:     rgba(240, 245, 255, 0.88);
 
-  --text-primary:   #1A1028;
-  --text-secondary: #5A4E72;
-  --text-muted:     #9088A8;
+  /* Texto */
+  --text-primary:   #030c1e;
+  --text-secondary: #0c2a66;
+  --text-muted:     #3d6499;
 
-  --border-color:  #DED9EE;
-  --border-hover:  #9B55D2;
+  /* Bordes — 30% morado */
+  --border-color:  #d0bce8;
+  --border-hover:  #7f00b2;
 
-  --icon-color:    #7B35B2;
-  --tag-bg:        rgba(123, 53, 178, 0.08);
-  --tag-color:     #7B35B2;
+  /* Tags / badges */
+  --tag-bg:    rgba(127, 0, 178, 0.08);
+  --tag-color: #7f00b2;
 
-  --shadow-card:   0 4px 24px rgba(123, 53, 178, 0.10);
-  --shadow-navbar: 0 2px 20px rgba(123, 53, 178, 0.10);
-  --overlay-bg:    rgba(247, 245, 255, 0.96);
+  /* Sombras */
+  --shadow-sm:     0 1px 3px rgba(1, 75, 160, 0.08);
+  --shadow-md:     0 4px 16px rgba(1, 75, 160, 0.12);
+  --shadow-lg:     0 10px 40px rgba(1, 75, 160, 0.16);
+  --shadow-card:   0 4px 24px rgba(127, 0, 178, 0.10);
+  --shadow-navbar: 0 2px 20px rgba(1, 75, 160, 0.12);
+  --shadow-glow:   0 0 32px rgba(127, 0, 178, 0.25);
 
-  --timeline-line: linear-gradient(180deg, #7B35B2, #C4B430);
-  --section-alt:   #EEEAF8;
+  --overlay-bg:    rgba(240, 245, 255, 0.96);
+  --timeline-line: linear-gradient(180deg, #014ba0, #7f00b2);
+  --section-alt:   #e2ecff;
+
+  /* Ícono activo */
+  --icon-color: #7f00b2;
 }
 
-/* ===================== MODO OSCURO ===================== */
+/* ===================== MODO OSCURO =====================
+   60% → Azul muy oscuro en fondos (navy profundo)
+   30% → Morado en elementos UI
+   10% → Amarillo en CTAs y activos
+   ======================================================= */
 [data-theme="dark"] {
-  --bg-primary:    #0C0A14;
-  --bg-secondary:  #120E1E;
-  --bg-card:       #1A1628;
-  --bg-card-hover: #221C34;
-  --bg-navbar:     rgba(12, 10, 20, 0.90);
+  /* Fondos — 60% azul expresado en navy oscuro */
+  --bg-primary:    #000d1f;
+  --bg-secondary:  #01152e;
+  --bg-card:       #011a3a;
+  --bg-card-hover: #022050;
+  --bg-navbar:     rgba(0, 13, 31, 0.92);
 
-  --text-primary:   #F0EEFF;
-  --text-secondary: #A89EC8;
-  --text-muted:     #6A6088;
+  /* Texto */
+  --text-primary:   #eef3ff;
+  --text-secondary: #7fa8e8;
+  --text-muted:     #3d6499;
 
-  --border-color:  #2A2240;
-  --border-hover:  #9B55D2;
+  /* Bordes — 30% morado */
+  --border-color:  #1b0038;
+  --border-hover:  #a21ad7;
 
-  --icon-color:    #9B55D2;
-  --tag-bg:        rgba(155, 85, 210, 0.15);
-  --tag-color:     #C090F0;
+  /* Tags / badges */
+  --tag-bg:    rgba(162, 26, 215, 0.18);
+  --tag-color: #c050f0;
 
+  /* Sombras */
+  --shadow-sm:     0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md:     0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg:     0 10px 40px rgba(0, 0, 0, 0.55);
   --shadow-card:   0 4px 24px rgba(0, 0, 0, 0.40);
-  --shadow-navbar: 0 2px 20px rgba(0, 0, 0, 0.40);
-  --overlay-bg:    rgba(12, 10, 20, 0.96);
+  --shadow-navbar: 0 2px 20px rgba(0, 0, 0, 0.50);
+  --shadow-glow:   0 0 32px rgba(162, 26, 215, 0.35);
 
-  --timeline-line: linear-gradient(180deg, #9B55D2, #D4C448);
-  --section-alt:   #120E1E;
+  --overlay-bg:    rgba(0, 13, 31, 0.97);
+  --timeline-line: linear-gradient(180deg, #1466c3, #a21ad7);
+  --section-alt:   #01152e;
+
+  --icon-color: #a21ad7;
 }

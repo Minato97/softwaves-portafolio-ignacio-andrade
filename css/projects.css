@@ -2,7 +2,7 @@
    PROJECTS.CSS — Portafolio de proyectos
    ============================================================ */
 
-/* --- Filtros --- */
+/* --- Filtros — amarillo en activo (10%) --- */
 .projects-filter {
   display: flex;
   flex-wrap: wrap;
@@ -26,14 +26,14 @@
 
 .filter-btn:hover {
   border-color: var(--purple);
-  color: var(--purple);
+  color: var(--purple-light);
 }
 
 .filter-btn.active {
-  background: var(--gradient-short);
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 4px 16px rgba(123, 53, 178, 0.30);
+  background: var(--yellow);
+  color: #030c1e;
+  border-color: var(--yellow);
+  box-shadow: 0 4px 16px rgba(255, 255, 0, 0.25);
 }
 
 /* --- Grid de proyectos --- */
@@ -53,7 +53,6 @@
   flex-direction: column;
   transition: all var(--transition-base);
   box-shadow: var(--shadow-sm);
-  position: relative;
 }
 
 .project-card:hover {
@@ -62,12 +61,9 @@
   border-color: var(--border-hover);
 }
 
-/* Ocultar para filtros */
-.project-card.hidden {
-  display: none;
-}
+.project-card.hidden { display: none; }
 
-/* --- Header de la tarjeta (banner de color) --- */
+/* --- Banner superior --- */
 .project-card-banner {
   height: 120px;
   position: relative;
@@ -77,14 +73,16 @@
   overflow: hidden;
 }
 
-.project-card-banner.bg-purple   { background: linear-gradient(135deg, #6B2D8C, #9B55D2); }
-.project-card-banner.bg-gold     { background: linear-gradient(135deg, #A09420, #D4C448); }
+/* Fondos de banner — todos usan la paleta */
+.project-card-banner.bg-blue     { background: linear-gradient(135deg, #002c74, #1466c3); }
+.project-card-banner.bg-purple   { background: linear-gradient(135deg, #530084, #a21ad7); }
 .project-card-banner.bg-gradient { background: var(--gradient); }
-.project-card-banner.bg-dark     { background: linear-gradient(135deg, #1A1628, #2A2240); }
-.project-card-banner.bg-teal     { background: linear-gradient(135deg, #0D7377, #14AFBE); }
-.project-card-banner.bg-amber    { background: linear-gradient(135deg, #B45309, #F59E0B); }
-.project-card-banner.bg-rose     { background: linear-gradient(135deg, #9F1239, #E11D48); }
-.project-card-banner.bg-indigo   { background: linear-gradient(135deg, #3730A3, #6366F1); }
+.project-card-banner.bg-dark     { background: linear-gradient(135deg, #000d1f, #011a3a); }
+.project-card-banner.bg-teal     { background: linear-gradient(135deg, #014ba0, #0a5cb8); }
+.project-card-banner.bg-amber    { background: linear-gradient(135deg, #7f00b2, #014ba0); }
+.project-card-banner.bg-rose     { background: linear-gradient(135deg, #1b004b, #7f00b2); }
+.project-card-banner.bg-indigo   { background: linear-gradient(135deg, #002c74, #7f00b2); }
+.project-card-banner.bg-gold     { background: linear-gradient(135deg, #014ba0, #ffff00); }
 
 .project-card-banner .banner-icon {
   font-size: 3rem;
@@ -97,13 +95,12 @@
   transform: scale(1.15) rotate(5deg);
 }
 
-/* Patrón decorativo en banner */
 .project-card-banner::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.10) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.12) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
 }
 
 /* Badge de estado */
@@ -119,9 +116,11 @@
   letter-spacing: 0.08em;
 }
 
-.status-done     { background: rgba(16,185,129,0.2); color: #10b981; border: 1px solid rgba(16,185,129,0.35); }
-.status-progress { background: rgba(245,158,11,0.2); color: #f59e0b; border: 1px solid rgba(245,158,11,0.35); }
-.status-thesis   { background: rgba(123,53,178,0.2); color: #9B55D2; border: 1px solid rgba(123,53,178,0.35); }
+.status-done     { background: rgba(16,185,129,0.2);  color: #10b981; border: 1px solid rgba(16,185,129,0.35); }
+.status-progress { background: rgba(255,255,0,0.15);  color: #b8ac00; border: 1px solid rgba(255,255,0,0.30); }
+.status-thesis   { background: rgba(127,0,178,0.2);   color: #a21ad7; border: 1px solid rgba(127,0,178,0.35); }
+
+[data-theme="dark"] .status-progress { color: var(--yellow); }
 
 /* --- Body de la tarjeta --- */
 .project-card-body {
@@ -136,7 +135,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--purple-light);
+  color: var(--blue-light);
   margin-bottom: var(--space-2);
 }
 
@@ -156,7 +155,6 @@
   margin-bottom: var(--space-4);
 }
 
-/* --- Tech stack tags --- */
 .project-stack {
   display: flex;
   flex-wrap: wrap;
@@ -169,7 +167,7 @@
   padding: 2px var(--space-2);
 }
 
-/* --- Footer de la tarjeta --- */
+/* --- Footer de tarjeta --- */
 .project-card-footer {
   padding: var(--space-4) var(--space-6);
   border-top: 1px solid var(--border-color);
@@ -178,10 +176,7 @@
   justify-content: space-between;
 }
 
-.project-links {
-  display: flex;
-  gap: var(--space-2);
-}
+.project-links { display: flex; gap: var(--space-2); }
 
 .project-link {
   display: flex;
@@ -198,22 +193,17 @@
 }
 
 .project-link:hover {
-  background: var(--tag-bg);
-  border-color: var(--purple);
-  color: var(--purple);
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: #030c1e;
 }
 
 .project-link.disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 /* --- Responsive --- */
-@media (max-width: 1024px) {
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 640px) {
-  .projects-grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 1024px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .projects-grid { grid-template-columns: 1fr; } }
